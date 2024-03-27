@@ -6,24 +6,3 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; 
-    padding-top: 60px; 
-    margin-bottom: 20px;
-    position: relative; 
-    
-    &__imageLogo {
-        width: 300px; 
-        position: absolute; 
-        top: 0; 
-    }
-
-    &__imageBoys {
-        width: 400px; 
-    }
-}

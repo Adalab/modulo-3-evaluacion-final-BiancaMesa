@@ -4,8 +4,10 @@ import callToApi from "../services/api"; //nos importamos la función que contie
 import Header from "./Header";
 import CharactersList from './CharactersList';
 import Filters from "./Filters"; 
+import HeaderCharacterDetails from "./HeaderCharacterDetails";
 import CharacterDetails from "./CharacterDetails";
 import '../scss/App.scss'; 
+
 
 function App() {
 
@@ -55,27 +57,30 @@ function App() {
 
   return (
     <>
-      <Header />
-
-      <main>
         <Routes>
 
           <Route path="/" element={
             <>
-            <Filters onChangeName={handleChangeName} />
-            <CharactersList characters={filteredCharacters}/>
+            <Header />
+            <main>
+              <Filters onChangeName={handleChangeName} />
+              <CharactersList characters={filteredCharacters}/>
+            </main>
             </>
           }
           />
 
           <Route path="/card/:cardId" element={
-            <CharacterDetails character={characterDetailData}/>
+            <>
+              <HeaderCharacterDetails />
+              <main>
+                <CharacterDetails character={characterDetailData}/>
+              </main>
+            </>           
           } 
           />
 
         </Routes>
-
-      </main>
     </>
   );
 }

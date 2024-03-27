@@ -1,0 +1,22 @@
+
+.headerCharacterDetails {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // gap: 20px; 
+    padding-top: 80px; 
+    margin-bottom: 20px;
+    // position: relative; 
+    text-align: center;
+    
+    &__imageLogo {
+        width: 350px; 
+        // position: absolute; 
+        // top: 0; 
+    }
+
+    // &__imageBoys {
+    //     width: 500px; 
+    // }
+}

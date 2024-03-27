@@ -22,11 +22,45 @@ function App() {
     //la función callToApi devuelve una promesa
     //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
     callToApi().then((charactersData) => {
+      //Creamos un array que contenga lo mismo que charactersData pero ordenado alfabéticamente por nombre. 
+      //1. Hacemos una copia del array de objetos charactersData usando destructuring
+      //2. Lo ordenamos usando el método sort, donde a y b van a ser dos elementos del array que el método va a ir comparando. Este método recibe como parámetro una función de comparación que va a determinar el orden de los elementos 
+      const sortedCharacters = [...charactersData].sort((a, b) => {
+        //Manera simplificada: Comparamos alfabéticamente el nombre del elemento a con el nombre del elemento b 
+        //return a.name.localeCompare(b.name);
+
+        //Manera no simplificada: Creamos una constante para los dos nombres que vamos a comparar. 
+        //a y b son dos elementos del array (dos objetos), accedemos a su propiedad nombre y lo ponemos en minúscula para evitar problemas
+        const nameA = a.name.toLowerCase(); 
+        const nameB = b.name.toLowerCase();
+
+        //El método sort realmente lo que ordena son números así que tenemos que asignarle números a cada comparación que realicemos para que sort pueda ordenarlos. 
+        //Si el nombre A es mayor que el nombre B alfabéticamente, devuelve 1
+        if (nameA > nameB) {
+          return 1; 
+        }
+
+        //Si el nombre A es inferior al nombre B alfabéticamente, devuelve -1
+        if (nameA < nameB) {
+          return -1; 
+        }
+
+        //Si el nombre A es igual al nombre B alfabéticamente, devuelve 0
+        if (nameA === nameB) {
+          return 0; 
+        }
+      });
       //guardamos este array de objetos que ha recogido la petición de la API en una variable de estado para poder usar esos datos ahora en App
-      setCharacters(charactersData);
+      setCharacters(sortedCharacters);
       //console.log(charactersData); 
     });
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
+
+  //Ordenar alfabéticamente la lista
+  // const sortedCharacters = () => {
+  //   const sortedList = [...filteredCharacters].sort();
+  //   setCharacters(sortedList); 
+  // };
 
   //FILTERS 
   //Filter by name
@@ -37,16 +71,18 @@ function App() {
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
   const filteredCharacters = characters
     .filter((character) => {
-      // if (character.name.toLowerCase().includes(filterName.toLocaleLowerCase())) {
-      //     return character;
-      // } else {
-      //     return setNoNameFound(`No hay ningún personaje que coincida con la palabra ${filterName}`);
-      // }
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
   });
 
   //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
   const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `No hay ningún personaje que coincida con la palabra "${filterName}".`: "";
+
+  //Ordenar la lista por orden alfabético 
+  // const sortedCharacters = () => {
+  //   const sortedList = [...filteredCharacters].sort(() => {
+  //     return a.name.toLowerCase().localeCompare(b.name.toLocaleLowerCase()); 
+  //   })
+  // }
 
   
   //RUTA DINÁMICA:

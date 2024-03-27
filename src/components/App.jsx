@@ -46,7 +46,7 @@ function App() {
   });
 
   //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
-  const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `No hay ningún personaje que coincida con la palabra "${filterName}"`: "";
+  const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `No hay ningún personaje que coincida con la palabra "${filterName}".`: "";
 
   
   //RUTA DINÁMICA:

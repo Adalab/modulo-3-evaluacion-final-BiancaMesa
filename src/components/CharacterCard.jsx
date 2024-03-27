@@ -1,12 +1,12 @@
+import "../scss/components/CharacterCard.scss";
 
-
-function CharacterCard() {
+function CharacterCard({characterData}) {
   return (
-    <div>
-        <img src="" alt="" />
-        <h4>Name</h4>
-        <p>Species</p>
-    </div>
+    <li className="characterCard">
+        <img className="characterCard__image" src={characterData.image} alt={characterData.name} />
+        <h4>{characterData.name}</h4>
+        <p>{characterData.species}</p>
+    </li>
   );
 }
 

@@ -15,6 +15,7 @@ const callToApi = () => {
                     planet: character.origin.name, 
                     episodesNumber: character.episode.length, //double check this is correct
                     status: character.status,
+                    id: character.id,
                 };
             });
             

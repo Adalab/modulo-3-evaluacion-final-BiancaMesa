@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react";
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
-import CharacterList from './CharacterList';
+import CharactersList from './CharactersList';
 import '../scss/App.scss'; 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       </header>
 
       <main>
-        <CharacterList />
+        <CharactersList characters={characters}/>
       </main>
     </>
   );

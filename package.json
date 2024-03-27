@@ -1,5 +1,6 @@
 {
   "name": "template-react",
+  "homepage": "./",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
     "sass": "^1.72.0"
   },
   "devDependencies": {

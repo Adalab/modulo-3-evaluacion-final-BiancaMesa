@@ -1,7 +1,9 @@
 import {useState, useEffect} from "react";
+import {Route, Routes, useLocation, matchPath} from "react-router-dom";
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
 import CharactersList from './CharactersList';
 import Filters from "./Filters"; 
+import CharacterDetails from "./CharacterDetails";
 import '../scss/App.scss'; 
 
 function App() {
@@ -31,9 +33,24 @@ function App() {
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
   const filteredCharacters = characters
     .filter((character) => {
-      // console.log(character.name.includes(filterName));
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
   });
+
+  
+  //RUTA DINÁMICA:
+  //Para obtener el id de la ruta 
+  //1. Usamos el hook useLocation para obtener el id de la ruta actual, la URL
+  const {pathname} = useLocation(); 
+  //2. Creamos una constante (es un objeto) en la que vamos a usar matchPath para comprobar si la ruta actual (pathname) coincide con la ruta dinámica deseada (/card/cardId). Si coincide, nos devolverá un objeto con información, entre ella el número de id que buscamos
+  const cardDetailRoute = matchPath("/card/:cardId", pathname);
+  //3. El id que buscamos está en el objeto en cardDetailRoute.params.cardId. Creamos una constante en la que recogamos ese valor siempre y cuando se haya encontrado una ruta para ese id, de lo contrario en la constante se almacenará un string vacío. 
+  //Le hacemos un parseInt al id que nos viene del navegador porque el navegador nos lo da como string y nosotras queremos el dato en número
+  const cardId = cardDetailRoute !== null ? parseInt(cardDetailRoute.params.cardId) : ''; 
+
+  //Buscamos en la variable de estado characters (array de objetos con la info de la API) el character que coincida con el id de la ruta. Find nos va a devolver el primer elemento que cumpla con la condición. Esa información se la vamos a pasar por props al componente que queremos pintar cuando el usuario haga click en un character
+  const characterDetailData = characters.find((character) => {
+    return character.id === cardId; 
+  }) 
 
   return (
     <>
@@ -42,8 +59,23 @@ function App() {
       </header>
 
       <main>
-        <Filters onChangeName={handleChangeName} />
-        <CharactersList characters={filteredCharacters}/>
+        <Routes>
+
+          <Route path="/" element={
+            <>
+            <Filters onChangeName={handleChangeName} />
+            <CharactersList characters={filteredCharacters}/>
+            </>
+          }
+          />
+
+          <Route path="/card/:cardId" element={
+            <CharacterDetails character={characterDetailData}/>
+          } 
+          />
+
+        </Routes>
+
       </main>
     </>
   );

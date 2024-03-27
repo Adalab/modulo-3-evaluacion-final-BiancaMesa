@@ -8,7 +8,7 @@ function FilterByName({onChangeName={onChangeName}}) {
 
   return (
     <div>
-        <label htmlFor="">Filter by characters</label>
+        <label htmlFor="">Filter by character</label>
         <input type="text" placeholder="Character's name..." onChange={handleChange}/>
     </div>
   );

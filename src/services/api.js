@@ -13,7 +13,7 @@ const callToApi = () => {
                     name: character.name,
                     species: character.species,
                     planet: character.origin.name, 
-                    episodesNumber: character.episode.length, //double check this is correct
+                    episodesNumber: character.episode.length, 
                     status: character.status,
                     id: character.id,
                 };

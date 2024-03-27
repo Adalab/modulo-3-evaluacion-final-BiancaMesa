@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white; 
+}
+
+.characterDetails {
+    list-style: none;
+    text-align: center;
+    border: 1px solid white;
+
+    &__image {
+        width: 200px; 
+        margin: 20px 0 10px; 
+    }
+}
+

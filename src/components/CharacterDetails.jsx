@@ -1,9 +1,9 @@
-
+import "../scss/components/CharacterDetails.scss";
 
 function CharacterDetails({character}) {
   return (
-    <li>
-        <img src={character.image} alt={character.name} />
+    <li className="characterDetails">
+        <img className="characterDetails__image" src={character.image} alt={character.name} />
         <h4>{character.name}</h4>
         <p>Species: {character.species}</p>
         <p>Status: {character.status}</p>

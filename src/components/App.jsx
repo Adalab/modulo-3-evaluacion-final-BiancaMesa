@@ -55,7 +55,7 @@ function App() {
   return (
     <>
       <header className='header'>
-        <img className='header__image' src="./src/images/Rick_and_Morty.png" alt="rick-and-morty-header" />
+        <img className='header__image' src="./src/images/rick_and_morty3.svg.png" alt="rick-and-morty-header" />
       </header>
 
       <main>

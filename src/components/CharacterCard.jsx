@@ -4,10 +4,24 @@ import "../scss/components/CharacterCard.scss";
 function CharacterCard({characterData}) {
   return (
     <li className="characterCard">
-        <Link to={`/card/${characterData.id}`}> 
-            <img className="characterCard__image" src={characterData.image} alt={characterData.name} />
-            <h4>{characterData.name}</h4>
-            <p>{characterData.species}</p>
+        <Link className="characterCard__link" to={`/card/${characterData.id}`}> 
+        <div className="characterCard__link--images">
+            <img className="frontImage" src={characterData.image} alt={characterData.name} />
+            <div className="backgroundImage"></div>
+            {/* <img className="backgroundImage" src="/src/images/rick_and_morty_portal.png" alt="background-img" /> */}
+        </div>
+           
+            <div className="characterCard__link--info">
+                <h4>{characterData.name}</h4>
+                <p>{characterData.species}</p>
+
+                <div className="more_info">   
+                    <button className="more_info__btn">More info</button>
+                    {/* <button className="more_info__btn"><img className="more_info__img" src="./src/images/rick_and_morty_portal.png" alt="" />More info</button> */}
+                    {/* <img className="more_info__img" src="./src/images/rick_and_morty_portal.png" alt="" /> */}
+                </div>
+
+            </div>
         </Link>
     </li>
   );

@@ -1,8 +1,9 @@
 import FilterByName from "./FilterByName";
+import "../scss/components/Filters.scss"
 
 function Filters({onChangeName={onChangeName}}) {
   return (
-    <form>
+    <form className="form">
         <FilterByName onChangeName={onChangeName}/>
     </form>
   );

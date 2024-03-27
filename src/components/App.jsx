@@ -14,6 +14,7 @@ function App() {
   //variables de estado
   const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
   const [filterName, setFilterName] = useState(""); 
+  //const [noNameFound, setNoNameFound] = useState(""); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -36,8 +37,16 @@ function App() {
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
   const filteredCharacters = characters
     .filter((character) => {
+      // if (character.name.toLowerCase().includes(filterName.toLocaleLowerCase())) {
+      //     return character;
+      // } else {
+      //     return setNoNameFound(`No hay ningún personaje que coincida con la palabra ${filterName}`);
+      // }
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
   });
+
+  //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
+  const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `No hay ningún personaje que coincida con la palabra "${filterName}"`: "";
 
   
   //RUTA DINÁMICA:
@@ -64,7 +73,7 @@ function App() {
             <Header />
             <main>
               <Filters onChangeName={handleChangeName} />
-              <CharactersList characters={filteredCharacters}/>
+              <CharactersList characters={filteredCharacters} message={noNameFoundMessage}/>
             </main>
             </>
           }
@@ -73,8 +82,8 @@ function App() {
           <Route path="/card/:cardId" element={
             <>
               <HeaderCharacterDetails />
-              <main>
-                <CharacterDetails character={characterDetailData}/>
+              <main className="mainCharacterDetails">
+                <CharacterDetails character={characterDetailData} />
               </main>
             </>           
           } 

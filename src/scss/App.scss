@@ -1,1 +1,10 @@
 @import 'core/reset';
+
+.header {
+    display: flex;
+    justify-content: center;
+    
+    &__image {
+        width: 300px; 
+    }
+}

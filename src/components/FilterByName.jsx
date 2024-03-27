@@ -7,9 +7,10 @@ function FilterByName({onChangeName={onChangeName}}) {
     };
 
   return (
-    <div>
+    <div className="filter__byName">
         {/* <label htmlFor="">Filter by character</label> */}
-        <input className="form__nameInput" type="text" placeholder="Search character..." onChange={handleChange}/>
+        <input className="filter__byName--input" type="text" placeholder="Search character..." onChange={handleChange}/>
+        {/* <img className="filter__byName--gif" src="./src/images/rick_and_morty2.jpg" alt="rick" /> */}
     </div>
   );
 }

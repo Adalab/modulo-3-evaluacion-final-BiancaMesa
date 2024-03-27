@@ -1,11 +1,3 @@
-@import 'core/reset';
-
-body {
-    background-image: url('/src/images/galaxy.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .header {
     display: flex;
@@ -13,17 +5,17 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px; 
-    padding-top: 60px; 
+    padding-top: 80px; 
     margin-bottom: 20px;
     position: relative; 
     
     &__imageLogo {
-        width: 300px; 
+        width: 350px; 
         position: absolute; 
         top: 0; 
     }
 
     &__imageBoys {
-        width: 400px; 
+        width: 500px; 
     }
 }

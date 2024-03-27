@@ -1,9 +1,24 @@
-.form {
+.filter {
     display: flex;
     justify-content: center;
     margin: 20px 0 20px 0; 
 
-    &__nameInput {
-        padding: 10px; 
+    &__byName {
+        display: flex;
+        align-items: center;
+        gap: 20px; 
+
+        &--input{
+            //padding: 10px; 
+            height: 50px; 
+            border: 1px solid blue; 
+            padding-left: 10px; 
+            border-radius: 10px;
+        }
+
+        &--gif {
+            width: 200px; 
+        }
+       
     }
 }

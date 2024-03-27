@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import {Route, Routes, useLocation, matchPath} from "react-router-dom";
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
+import Header from "./Header";
 import CharactersList from './CharactersList';
 import Filters from "./Filters"; 
 import CharacterDetails from "./CharacterDetails";
@@ -54,9 +55,7 @@ function App() {
 
   return (
     <>
-      <header className='header'>
-        <img className='header__image' src="./src/images/rick_and_morty3.svg.png" alt="rick-and-morty-header" />
-      </header>
+      <Header />
 
       <main>
         <Routes>

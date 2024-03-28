@@ -10,7 +10,7 @@ function Header() {
       />
       <img
         className="header__imageBoys"
-        src=".,/images/rick_and_morty2.jpg"
+        src="../images/rick_and_morty2.jpg"
         alt="rick"
       />
     </header>

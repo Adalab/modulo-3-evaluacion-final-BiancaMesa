@@ -15,6 +15,7 @@ function App() {
   const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
   const [filterName, setFilterName] = useState(""); 
   const [filterSpecies, setFilterSpecies] = useState(""); //variable que recoge el valor de la especie seleccionada 
+  const [filterStatus, setFilterStatus] = useState(""); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -68,15 +69,28 @@ function App() {
     setFilterSpecies(value);
   };
 
+  //Filter by status
+  const handleChangeStatus = (value) => {
+    setFilterStatus(value);
+    console.log(value); 
+  };
+
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
     })
     .filter((character) => {
-      //return character.species.includes(filterSpecies);
       return filterSpecies !== "" ? character.species === filterSpecies : true;  
-    });
+    })
+    .filter((character) => {
+      //devuelve los characters que cumplan con la siguiente condición: 
+      //Si la variable que guarda el valor del estado seleccionado (filterStatus) está vacía, que no nos filtre nada (porque aún no se ha seleccionado nada), de esta manera al cargar la página por primera vez nos saldrán todos los personajes
+      //Si la variable de estado filterStatus no está vacía, entonces filter nos va a devolver los personajes cuyo status concuerde con el marcado, de lo contrario 
+      //TRUE: se utiliza para decirle al método filter que todos los characters pasan el filtro cuando no hay ningún filtro establecido. El método filter funciona de la siguiente manera: si el elemento que pasamos por párametro (en este caso character) cumple con la condición, pasa el filtro y si el parámetro no lo cumple, no pasa el filtro. 
+      //Al poner true, le estamos diciendo al método filter que si la condición que hemos puesto no se cumple, que todos los elementos que estamos pasado como parámetros pasen el filtro. 
+      return filterStatus !== "" ? character.status === filterStatus : true; 
+    }); 
 
 
   //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
@@ -107,7 +121,8 @@ function App() {
             <>
             <Header />
             <main>
-              <Filters onChangeName={handleChangeName} onChangeSpecies={handleChangeSpecies} />
+              <Filters onChangeName={handleChangeName} onChangeSpecies={handleChangeSpecies} onChangeStatus={handleChangeStatus}/>
+
               <CharactersList characters={filteredCharacters} message={noNameFoundMessage}/>
             </main>
             </>

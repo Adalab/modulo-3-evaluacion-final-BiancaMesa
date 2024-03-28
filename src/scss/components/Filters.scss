@@ -33,7 +33,6 @@
         border: none; 
         display: flex;
         flex-direction: column;
-        flex-direction: column;
         gap: 10px; 
 
         &--title {
@@ -46,6 +45,31 @@
             border: 1px solid rgb(54, 91, 213); 
             padding: 15px; 
             cursor: pointer; 
+        }
+    }
+
+    &__byStatus {
+        border: none; 
+        color: white; 
+        gap: 15px; 
+
+        &--alive {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--dead {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--unknown {
+            display: flex;
+            justify-content: space-between;
+
+            .unknownTitle {
+                margin-right: 11px; 
+            }
         }
     }
 }

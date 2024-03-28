@@ -16,10 +16,12 @@ function App() {
   const [filterName, setFilterName] = useState(""); 
   const [filterSpecies, setFilterSpecies] = useState(""); //variable que recoge el valor de la especie seleccionada 
   const [filterStatus, setFilterStatus] = useState(""); 
+  const [isLoading, setIsLoading] = useState(false);
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
   useEffect(() => {
+    setIsLoading(true); 
     //la función callToApi devuelve una promesa
     //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
     callToApi().then((charactersData) => {
@@ -51,6 +53,7 @@ function App() {
           return 0; 
         }
       });
+      setIsLoading(false); //poner justo despues de que el fetch responda 
       //guardamos este array de objetos que ha recogido la petición de la API en una variable de estado para poder usar esos datos ahora en App
       setCharacters(sortedCharacters);
       //console.log(charactersData); 
@@ -75,7 +78,7 @@ function App() {
   };
 
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
-  const filteredCharacters = characters
+  let filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
     })
@@ -112,6 +115,15 @@ function App() {
     return character.id === cardId; 
   }) 
 
+
+  //DELETE FILTERS
+  const handleDeleteFilters = () => {
+    setFilterName("");
+    setFilterSpecies("");
+    setFilterStatus("");
+    filteredCharacters = [];
+  };
+
   return (
     <>
         <Routes>
@@ -120,9 +132,14 @@ function App() {
             <>
             <Header />
             <main>
-              <Filters onChangeName={handleChangeName} onChangeSpecies={handleChangeSpecies} onChangeStatus={handleChangeStatus}/>
+              <Filters 
+                onChangeName={handleChangeName} 
+                onChangeSpecies={handleChangeSpecies} 
+                onChangeStatus={handleChangeStatus} 
+                onDeleteFilters={handleDeleteFilters}
+              />
 
-              <CharactersList characters={filteredCharacters} message={noNameFoundMessage}/>
+              <CharactersList characters={filteredCharacters} message={noNameFoundMessage} isLoading={isLoading}/>
             </main>
             </>
           }
@@ -132,7 +149,7 @@ function App() {
             <>
               <HeaderCharacterDetails />
               <main className="mainCharacterDetails">
-                <CharacterDetails character={characterDetailData} />
+                <CharacterDetails character={characterDetailData}/>
               </main>
             </>           
           } 

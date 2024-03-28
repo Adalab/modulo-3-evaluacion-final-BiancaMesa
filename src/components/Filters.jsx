@@ -3,13 +3,16 @@ import FilterBySpecies from "./FilterBySpecies";
 import FilterByStatus from "./FilterByStatus";
 import "../scss/components/Filters.scss"
 
-function Filters({onChangeName, onChangeSpecies, onChangeStatus}) {
+function Filters({onChangeName, onChangeSpecies, onChangeStatus, onDeleteFilters}) {
   return (
-    <form className="filter">
+    <section className="filterSection">
+      <form className="filter">
         <FilterByName onChangeName={onChangeName}/>
         <FilterBySpecies onChangeSpecies={onChangeSpecies}/>
         <FilterByStatus onChangeStatus={onChangeStatus}/>
-    </form>
+      </form>
+      <button className="deleteFilters" onClick={onDeleteFilters}>Delete Filters</button>
+    </section>
   );
 }
 

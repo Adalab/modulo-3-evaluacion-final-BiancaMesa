@@ -1,17 +1,17 @@
+//import "../scss/components/Filters.scss";
 
-
-function FilterByName({onChangeName={onChangeName}}) {
+function FilterByName({onChangeName}) {
 
     const handleChange = (event) => {
         onChangeName(event.target.value);
     };
 
   return (
-    <div className="filter__byName">
-        {/* <label htmlFor="">Filter by character</label> */}
-        <input className="filter__byName--input" type="text" placeholder="Search character..." onChange={handleChange}/>
+    <fieldset className="filter__byName">
+        <label className="filter__byName--title" htmlFor="name">Name</label>
+        <input className="filter__byName--input" type="text"  id="name" placeholder="Search character..." onChange={handleChange}/>
         {/* <img className="filter__byName--gif" src="./src/images/rick_and_morty2.jpg" alt="rick" /> */}
-    </div>
+    </fieldset>
   );
 }
 

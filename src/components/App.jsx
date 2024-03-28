@@ -14,6 +14,7 @@ function App() {
   //variables de estado
   const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
   const [filterName, setFilterName] = useState(""); 
+  const [filterSpecies, setFilterSpecies] = useState(""); //variable que recoge el valor de la especie seleccionada 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -62,11 +63,21 @@ function App() {
     setFilterName(value);
   }; 
 
+  //Filter by species
+  const handleChangeSpecies = (value) => {
+    setFilterSpecies(value);
+  };
+
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 
   const filteredCharacters = characters
     .filter((character) => {
       return character.name.toLowerCase().includes(filterName.toLocaleLowerCase());
-  });
+    })
+    .filter((character) => {
+      //return character.species.includes(filterSpecies);
+      return filterSpecies !== "" ? character.species === filterSpecies : true;  
+    });
+
 
   //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
   const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `Sorry, there are no matches for "${filterName}"` : "";
@@ -96,7 +107,7 @@ function App() {
             <>
             <Header />
             <main>
-              <Filters onChangeName={handleChangeName} />
+              <Filters onChangeName={handleChangeName} onChangeSpecies={handleChangeSpecies} />
               <CharactersList characters={filteredCharacters} message={noNameFoundMessage}/>
             </main>
             </>

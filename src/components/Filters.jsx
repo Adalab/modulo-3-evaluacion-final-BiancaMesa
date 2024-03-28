@@ -11,7 +11,7 @@ function Filters({onChangeName, onChangeSpecies, onChangeStatus, onDeleteFilters
         <FilterBySpecies onChangeSpecies={onChangeSpecies}/>
         <FilterByStatus onChangeStatus={onChangeStatus}/>
       </form>
-      <button className="deleteFilters" onClick={onDeleteFilters}>Delete Filters</button>
+      <button className="deleteFilters" onClick={onDeleteFilters}>Delete Filters <i className="fa-solid fa-trash-can"></i> </button>
     </section>
   );
 }

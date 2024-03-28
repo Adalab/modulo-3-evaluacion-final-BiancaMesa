@@ -5,12 +5,12 @@ function Header() {
     <header className="header">
       <img
         className="header__imageLogo"
-        src="./src/images/rick_and_morty3.svg.png"
+        src="/src/images/rick_and_morty3.svg.png"
         alt="rick-and-morty-header"
       />
       <img
         className="header__imageBoys"
-        src="./src/images/rick_and_morty2.jpg"
+        src="/src/images/rick_and_morty2.jpg"
         alt="rick"
       />
     </header>

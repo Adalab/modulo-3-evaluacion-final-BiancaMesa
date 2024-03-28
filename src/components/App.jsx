@@ -14,7 +14,6 @@ function App() {
   //variables de estado
   const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
   const [filterName, setFilterName] = useState(""); 
-  //const [noNameFound, setNoNameFound] = useState(""); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -56,11 +55,6 @@ function App() {
     });
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
 
-  //Ordenar alfabéticamente la lista
-  // const sortedCharacters = () => {
-  //   const sortedList = [...filteredCharacters].sort();
-  //   setCharacters(sortedList); 
-  // };
 
   //FILTERS 
   //Filter by name
@@ -75,14 +69,8 @@ function App() {
   });
 
   //si lo que escribe el usuario no se corresponde con ningún personaje. Verificamos primero si el array de personajes filtrados está vacío y el filtro (input) no lo está
-  const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `No hay ningún personaje que coincida con la palabra "${filterName}".`: "";
+  const noNameFoundMessage = filteredCharacters.length === 0 && filterName !== "" ? `Sorry, there are no matches for "${filterName}"` : "";
 
-  //Ordenar la lista por orden alfabético 
-  // const sortedCharacters = () => {
-  //   const sortedList = [...filteredCharacters].sort(() => {
-  //     return a.name.toLowerCase().localeCompare(b.name.toLocaleLowerCase()); 
-  //   })
-  // }
 
   
   //RUTA DINÁMICA:

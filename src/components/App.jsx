@@ -72,7 +72,6 @@ function App() {
   //Filter by status
   const handleChangeStatus = (value) => {
     setFilterStatus(value);
-    console.log(value); 
   };
 
   //variable que es un array de objetos que recoge las información después de haber aplicado todos los filtros, por ahora, el filtro por nombre sólo 

@@ -23,7 +23,7 @@ function FilterByStatus({onChangeStatus}) {
         <label className="unknownTitle" htmlFor="unknown">
           Unknown
         </label>
-        <input className="unknownInput" type="checkbox" id="unknown" value="Unknown" onChange={handleChange}/>
+        <input className="unknownInput" type="checkbox" id="unknown" value="unknown" onChange={handleChange}/>
       </div>
     </fieldset>
   );

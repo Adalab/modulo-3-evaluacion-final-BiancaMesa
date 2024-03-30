@@ -18,6 +18,7 @@ function App() {
   const [filterStatus, setFilterStatus] = useState(""); 
   const [isLoading, setIsLoading] = useState(false);
   //const [characterSpecies, setCharacterSpecies] = useState(""); 
+  //const [hasCLickedDelete, setHasClickedDelete] = useState(false); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -122,7 +123,8 @@ function App() {
     setFilterName("");
     setFilterSpecies("");
     setFilterStatus("");
-    filteredCharacters = [];
+    //setCharacters = ([]);
+    //setHasClickedDelete(true); 
   };
 
   //ICONS
@@ -145,6 +147,9 @@ function App() {
                 onChangeSpecies={handleChangeSpecies} 
                 onChangeStatus={handleChangeStatus} 
                 onDeleteFilters={handleDeleteFilters}
+                valueName={filterName}
+                valueStatus={filterStatus}
+                valueSpecies={filterSpecies}
               />
 
               <CharactersList characters={filteredCharacters} message={noNameFoundMessage} isLoading={isLoading}/>

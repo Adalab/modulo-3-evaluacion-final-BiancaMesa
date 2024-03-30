@@ -7,11 +7,14 @@ function CharacterDetails({character}) {
 
     <li className="characterDetails">
         <Link className="characterDetails__link" to="/">
-            <p className="characterDetails__link--backToList">Back home </p>
+            <p className="characterDetails__link--backToList">Back home</p>
             <i className="characterDetails__link--backToList-icon fa-solid fa-x22222"></i>
         </Link>
+        
         <img className="characterDetails__image" src={character.image} alt={character.name} />
+
         <h4 className="characterDetails__name">{character.name}</h4>
+
         <p>Species: {character.species === "Human" ? `${character.species} 👤` : `${character.species} 👽`}</p>
 
         <p>Status: {character.status === "Alive" ? `${character.status} ` : `${character.status} `}

@@ -1,9 +1,9 @@
 //import "../scss/components/Filters.scss";
 
-function FilterByName({onChangeName}) {
+function FilterByName({onChangeName, valueName}) {
 
     const handleChange = (event) => {
-        onChangeName(event.target.value);
+          onChangeName(event.target.value);
     };
 
     //Al hacer click en la tecla Enter, evita que se refresque la página (comportamiento predeterminado del navegador)
@@ -23,7 +23,7 @@ function FilterByName({onChangeName}) {
           placeholder="Search character..." 
           onChange={handleChange} 
           onKeyUp={handleKeyPress}
-          // value={}
+          value={valueName}
         />
         {/* <img className="filter__byName--gif" src="./src/images/rick_and_morty2.jpg" alt="rick" /> */}
     </fieldset>

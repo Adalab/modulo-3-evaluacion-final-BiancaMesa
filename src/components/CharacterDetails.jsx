@@ -1,10 +1,11 @@
 import {Link} from "react-router-dom";
-import heartBeat from "../images/heartbeat.png";
+//import heartBeat from "../images/heartbeat.png";
+import portal from "../images/portal.gif"; 
 import "../scss/components/CharacterDetails.scss";
 
 function CharacterDetails({character}) {
   return (
-
+    <>
     <li className="characterDetails">
         <Link className="characterDetails__link" to="/">
             <p className="characterDetails__link--backToList">Back home</p>
@@ -28,6 +29,10 @@ function CharacterDetails({character}) {
         <p>Origin: {character.planet}</p>
         <p className="characterDetails__episodes">Episodes: {character.episodesNumber}</p>
     </li>
+    <footer className="characterDetailsFooter">
+      <img className="characterDetailsFooter__gif" src={portal} alt="portal" />
+    </footer>
+    </>
   );
 }
 

@@ -47,6 +47,7 @@
         display: flex;
         gap: 10px; 
         border: 1px solid rgb(131, 186, 128); 
+        margin-top: 10px; 
         padding: 9px 2px 9px 14px; 
         border-radius: 20px;
         cursor: pointer; 
@@ -81,3 +82,12 @@
     }
 }
 
+.characterDetailsFooter {
+    display: flex; 
+    justify-content: center;
+    margin: 70px 0 30px 0;
+
+    &__gif {
+        width: 200px; 
+    }
+}

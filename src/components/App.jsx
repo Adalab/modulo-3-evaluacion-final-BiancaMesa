@@ -1,11 +1,12 @@
 import {useState, useEffect} from "react";
 import {Route, Routes, useLocation, matchPath} from "react-router-dom";
+import loveGif from "../images/love.gif"; 
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
 import Header from "./Header";
 import CharactersList from './CharactersList';
 import Filters from "./Filters"; 
 import HeaderCharacterDetails from "./HeaderCharacterDetails";
-import CharacterDetails from "./CharacterDetails";
+import CharacterDetails from "./CharacterDetails"; 
 import '../scss/App.scss'; 
 
 
@@ -154,6 +155,10 @@ function App() {
 
               <CharactersList characters={filteredCharacters} message={noNameFoundMessage} isLoading={isLoading}/>
             </main>
+
+            <footer className="landingFooter">
+                <img className="landingFooter__gif" src={loveGif} alt="loveGif" />
+            </footer>
             </>
           }
           />

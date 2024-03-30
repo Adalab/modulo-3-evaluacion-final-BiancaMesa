@@ -1,6 +1,7 @@
 import "../scss/components/NoNameFound.scss";
-import notFoundGif from "../images/gif2.gif";
+//import notFoundGif from "../images/gif2.gif";
 import rickBadLook from "../images/rick_bad_look.png";
+//import doNotPanic from "../images/do_not_panic.jpg";
 
 function NoNameFound({message}) {
   return (
@@ -14,6 +15,7 @@ function NoNameFound({message}) {
       }
       {/* {message && <img className="noNameFoundContainer__gif" src={notFoundGif} alt="gif-IThoughtItWasCool" /> } */}
       {message && <img className="noNameFoundContainer__gif" src={rickBadLook} alt="rickBadLook" /> }
+      {/* {message && <img className="noNameFoundContainer__gif" src={doNotPanic} alt="doNotPanic"/> } */}
     </div>
   );
 }

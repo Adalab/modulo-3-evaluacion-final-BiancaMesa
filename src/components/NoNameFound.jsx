@@ -1,7 +1,8 @@
-import "../scss/components/NoNameFound.scss";
 //import notFoundGif from "../images/gif2.gif";
 import rickBadLook from "../images/rick_bad_look.png";
 //import doNotPanic from "../images/do_not_panic.jpg";
+import PropTypes from "prop-types"; 
+import "../scss/components/NoNameFound.scss";
 
 function NoNameFound({message}) {
   return (
@@ -19,5 +20,9 @@ function NoNameFound({message}) {
     </div>
   );
 }
+
+NoNameFound.propTypes = {
+  message: PropTypes.string.isRequired
+};
 
 export default NoNameFound;

@@ -1,6 +1,7 @@
 import CharacterCard from "./CharacterCard";
 import NoNameFound from "./NoNameFound";
 import Loading from "./Loading";
+import PropTypes from "prop-types"; 
 import "../scss/components/CharactersList.scss";
 
 function CharactersList({characters, message, isLoading}) {
@@ -16,6 +17,12 @@ function CharactersList({characters, message, isLoading}) {
         </ul>
     </section>
   );
+}
+
+CharactersList.propTypes = {
+  characters: PropTypes.array.isRequired, 
+  message: PropTypes.string.isRequired, 
+  isLoading: PropTypes.bool.isRequired
 }
 
 export default CharactersList;

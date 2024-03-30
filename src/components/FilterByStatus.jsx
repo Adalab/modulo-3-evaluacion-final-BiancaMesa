@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; 
 
 function FilterByStatus({onChangeStatus, valueStatus}) {
 
@@ -26,5 +27,10 @@ function FilterByStatus({onChangeStatus, valueStatus}) {
     </fieldset>
   );
 }
+
+FilterByStatus.propTypes = {
+  onChangeStatus: PropTypes.func.isRequired,
+  valueStatus: PropTypes.string.isRequired
+};
 
 export default FilterByStatus;

@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types"; 
 
 function Loading({isLoading}) {
 
@@ -8,5 +8,9 @@ function Loading({isLoading}) {
     </div>
   );
 }
+
+Loading.propTypes = {
+  isLoading: PropTypes.bool.isRequired
+};
 
 export default Loading;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"; 
 
 function FilterBySpecies({onChangeSpecies, valueSpecies}) {
 
@@ -16,5 +17,10 @@ function FilterBySpecies({onChangeSpecies, valueSpecies}) {
     </fieldset>
   );
 }
+
+FilterBySpecies.propTypes = {
+  onChangeSpecies: PropTypes.func.isRequired,
+  valueSpecies: PropTypes.string.isRequired
+};
 
 export default FilterBySpecies;

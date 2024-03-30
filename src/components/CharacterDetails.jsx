@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 //import heartBeat from "../images/heartbeat.png";
 import portalRunning from "../images/portal_running.gif"; 
+import PropTypes from "prop-types"; 
 import "../scss/components/CharacterDetails.scss";
 
 function CharacterDetails({character}) {
@@ -35,5 +36,9 @@ function CharacterDetails({character}) {
     </>
   );
 }
+
+CharacterDetails.propTypes = {
+  character: PropTypes.object //isRequired --> error
+};
 
 export default CharacterDetails;

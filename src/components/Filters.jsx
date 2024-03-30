@@ -1,6 +1,7 @@
 import FilterByName from "./FilterByName";
 import FilterBySpecies from "./FilterBySpecies";
 import FilterByStatus from "./FilterByStatus";
+import PropTypes from "prop-types"; 
 import "../scss/components/Filters.scss"
 
 function Filters({onChangeName, onChangeSpecies, onChangeStatus, onDeleteFilters, valueName, valueStatus, valueSpecies}) {
@@ -16,5 +17,15 @@ function Filters({onChangeName, onChangeSpecies, onChangeStatus, onDeleteFilters
     </section>
   );
 }
+
+Filters.propTypes = {
+  onChangeName: PropTypes.func.isRequired, 
+  onChangeSpecies: PropTypes.func.isRequired,
+  onChangeStatus: PropTypes.func.isRequired, 
+  onDeleteFilters: PropTypes.func.isRequired,
+  valueName: PropTypes.string.isRequired,
+  valueStatus: PropTypes.string.isRequired, 
+  valueSpecies: PropTypes.string.isRequired
+};
 
 export default Filters;

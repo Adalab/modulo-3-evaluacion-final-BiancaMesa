@@ -1,7 +1,7 @@
 import logo from "../images/rick_and_morty3.svg.png";
 import rickAndMortyGuns from "../images/rick_and_morty2.jpg";
 import portal from "../images/portal.gif";
-import "../scss/components/Header.scss";
+import "../scss/components/Header.scss"; 
 
 
 function Header() {

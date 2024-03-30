@@ -1,4 +1,5 @@
 //import "../scss/components/Filters.scss";
+import PropTypes from "prop-types"; 
 
 function FilterByName({onChangeName, valueName}) {
 
@@ -29,5 +30,10 @@ function FilterByName({onChangeName, valueName}) {
     </fieldset>
   );
 }
+
+FilterByName.propTypes = {
+  onChangeName: PropTypes.func.isRequired,
+  valueName: PropTypes.string.isRequired
+};
 
 export default FilterByName;

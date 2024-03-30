@@ -1,6 +1,8 @@
 .characterCard {
     list-style: none;
     text-align: center;
+    //margin: 10px 10px 0 10px; 
+    margin: 0 20px 30px 20px; 
 
     &__link {
         text-decoration: none;
@@ -34,16 +36,16 @@
             border-radius: 8px;
             color: black; 
             background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(155, 155, 197) 35%, rgba(0,212,255,1) 100%);
+            background: linear-gradient(90deg, rgb(50, 46, 135) 0%, rgb(155, 155, 197) 35%, rgba(0,212,255,1) 100%);
 
             .characterName {
                 font-size: 20px;
                 margin: 5px 0 5px 0;
             }
             
-            .characterSpecies {
-
-            }
+            // .characterSpecies {
+                
+            // }
 
             .more_info {
                 display: flex; 
@@ -60,6 +62,7 @@
                     cursor: pointer; 
                     font-size: 15px;
                     font-weight: bold;
+                    background-color: white;
                     color: #3364a3;  
                     border-radius: 10px;
                     border: 1px solid rgb(119, 197, 119); 

@@ -7,7 +7,7 @@ function FilterByStatus({onChangeStatus, valueStatus}) {
 
   return (
     <fieldset className="filter__byStatus">
-      <legend>Status</legend>
+      <legend className="filter__byStatus--title">Status</legend>
 
       <div className="filter__byStatus--alive">
         <label htmlFor="alive">Alive</label>

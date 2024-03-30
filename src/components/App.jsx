@@ -165,7 +165,10 @@ function App() {
 
           <Route path="/card/:cardId" element={
             <>
+            {/* <Route  path="/"> */}
               <HeaderCharacterDetails />
+            {/* </Route> */}
+             
               <main className="mainCharacterDetails">
                 <CharacterDetails character={characterDetailData}/>
               </main>

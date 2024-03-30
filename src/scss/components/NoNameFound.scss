@@ -1,17 +1,20 @@
 .noNameFoundContainer {
     // color: white; 
     // font-size: 30px;
-    margin-top: 70px;
+    //margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    //position: relative;
 
-    &__message {
+    &__message1 {
         font-size: 30px;
         text-align: center;
         color: white;  
         width: 600px; 
         line-height: 1.5;
+        position: relative;
+        top: 100px; 
     }
 
     &__message2 {
@@ -20,18 +23,21 @@
         color: white;  
         width: 600px; 
         line-height: 1.5;
+        position: relative; 
+        top: 100px; 
 
-        .wink {
-            color: rgb(163, 197, 210); 
-            margin-left: 10px; 
-            font-size: 25px;
-        }
+        // .wink {
+        //     color: rgb(163, 197, 210); 
+        //     margin-left: 10px; 
+        //     font-size: 25px;
+        // }
     }
 
     &__gif {
-        width: 500px; 
-        margin: 20px 0 50px 0; 
+        width: 550px; 
+        //margin: 20px 0 50px 0; 
         border-radius: 10px;
         box-shadow: 0px 0px 10px rgba(163, 199, 226, 0.8);
+        
     }
 }

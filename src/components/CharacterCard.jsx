@@ -12,8 +12,8 @@ function CharacterCard({characterData}) {
         </div>
            
             <div className="characterCard__link--info">
-                <h4>{characterData.name}</h4>
-                <p>{characterData.species}</p>
+                <h4 className="characterName">{characterData.name}</h4>
+                <p className="characterSpecies">{characterData.species}</p>
 
                 <div className="more_info">   
                     <button className="more_info__btn">More info</button>

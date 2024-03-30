@@ -8,22 +8,42 @@
         &--images {
             position: relative; 
             display: flex;
+
+            &:hover {
+                //background-color: rgb(157, 233, 172);
+                border-radius: 60px 60px 0 0;
+                //padding-top: 10px; 
+            }
            
             .frontImage {
                 width: 200px; 
                 border-radius: 50%;
                 border: 1px solid rgb(110, 145, 214); 
                 margin-bottom: 10px;
+
+                &:hover {
+                    transform: scale(1.1);
+                    border: 3px solid rgb(110, 214, 153); 
+                }
             }
         }
 
        
         &--info {
             padding: 10px 0; 
+            border-radius: 8px;
             color: black; 
             background: rgb(2,0,36);
             background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(155, 155, 197) 35%, rgba(0,212,255,1) 100%);
-           
+
+            .characterName {
+                font-size: 20px;
+                margin: 5px 0 5px 0;
+            }
+            
+            .characterSpecies {
+
+            }
 
             .more_info {
                 display: flex; 
@@ -50,6 +70,12 @@
                     // background-image: url('/src/images/rick_and_morty_portal.png');
                     // background-size: cover;
                     // background-position: center;
+
+                    &:hover {
+                        //border: 2px solid rgb(110, 214, 153); 
+                        background-color: #3364a3;
+                        color: white; 
+                    }
 
                 }
 

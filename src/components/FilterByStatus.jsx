@@ -10,12 +10,12 @@ function FilterByStatus({onChangeStatus, valueStatus}) {
       <legend className="filter__byStatus--title">Status</legend>
 
       <div className="filter__byStatus--alive">
-        <label className="aliveTitle" htmlFor="alive">Alive</label>
+        <label className="aliveTitle" htmlFor="alive">Alive <i className="fa-solid fa-heart-pulse"></i></label>
         <input type="checkbox" id="alive" value="Alive" checked={valueStatus === "Alive"}  onChange={handleChange}/>
       </div>
       
       <div className="filter__byStatus--dead">
-        <label className="deadTitle" htmlFor="dead">Dead</label>
+        <label className="deadTitle" htmlFor="dead">Dead <i className="fa-solid fa-skull-crossbones"></i></label>
         <input type="checkbox" id="dead" value="Dead" checked={valueStatus === "Dead"} onChange={handleChange}/>
       </div>
 

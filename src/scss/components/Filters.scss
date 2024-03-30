@@ -9,7 +9,7 @@
 .filter {
     display: flex;
     justify-content: center;
-    align-items: center;
+    //align-items: center;
     margin: 20px 0 20px 0; 
     gap: 60px; 
 
@@ -24,29 +24,37 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
+
+            background-color: rgb(123, 219, 149);
+            border-radius: 5px;
+            padding: 1px 4px 1px 5px; 
+            width: 60px;
         }
 
         &--input{
-            height: 50px; 
+            //height: 50px; 
             border-radius: 10px;
             border: 1px solid rgb(54, 91, 213); 
             //border: 1px solid rgb(131, 186, 128); 
-            padding-left: 10px; 
+            padding: 15px 0 15px 10px; 
+            font-size: 15px;
 
             &:focus {
-                outline-color: rgb(119, 197, 119); 
+                //outline-color: rgb(119, 197, 119); 
+                outline-color: rgb(233, 233, 87); 
             }
         }
 
-        &--gif {
-            width: 200px; 
-        }
+        // &--gif {
+        //     width: 200px; 
+        // }
     }
 
     &__bySpecies {
         border: none; 
         display: flex;
         flex-direction: column;
+       align-items: start;
         gap: 10px; 
 
         &--title {
@@ -54,13 +62,21 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
+
+            background-color: rgb(123, 219, 149);
+            border-radius: 5px;
+            padding: 1px 4px 1px 5px; 
+           
         }
 
         &--options {
             border-radius: 10px;
             border: 1px solid rgb(54, 91, 213); 
-            padding: 15px; 
-            padding-right: 20px;
+            padding-left: 15px; 
+            width: 100px; 
+            height: 50px; 
+            font-size: 15px; 
+            //padding: 15px 20px 15px 0;
             //padding: 15px 26px 15px 26px; 
             //width: 140px; 
             background-position: right 50px center;
@@ -75,15 +91,19 @@
     &__byStatus {
         border: none; 
         color: white; 
-        gap: 10px; 
+        gap: 8px; 
         display: flex;
-        //flex-direction: column;
-        align-items: center;
+        flex-direction: column;
+        //align-items: center;
 
         &--title {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
+
+            background-color: rgb(123, 219, 149);
+            border-radius: 5px;
+            padding: 1px 4px 1px 5px; 
 
         }
 
@@ -93,9 +113,9 @@
             font-size: 17px;
             //margin-bottom: 5px; 
             //gap: 44px;
-            gap: 10px; 
+            //gap: 10px; 
             align-items: center; 
-            margin-right: 10px; 
+            //margin-right: 7px; 
 
             .aliveTitle {
                 //margin-right: 22px;
@@ -103,7 +123,7 @@
                 //background-color: rgb(103, 158, 31);
                 //background-color: rgb(220, 221, 175);
                 border: 1px solid white; 
-                padding: 2px 5px; 
+                padding: 0px 5px; 
                 //color: black; 
             }
         }
@@ -114,9 +134,9 @@
             font-size: 17px;
             //margin-bottom: 5px; 
             //gap: 48px; 
-            gap: 10px; 
+            //gap: 10px; 
             align-items: center;
-            margin-right: 10px; 
+            //margin-right: 10px; 
 
             .deadTitle {
                 //margin-right: 22px;
@@ -124,7 +144,7 @@
                 //background-color: rgb(103, 158, 31);
                 //background-color: rgb(220, 221, 175);
                 border: 1px solid white; 
-                padding: 2px 5px; 
+                padding: 0px 5px; 
             }
         }
 
@@ -132,7 +152,7 @@
             display: flex;
             justify-content: space-between;
             //gap: 20px; 
-            gap: 10px; 
+            gap: 13px; 
             align-items: center;
           
 
@@ -144,7 +164,7 @@
                 //background-color: rgb(103, 158, 31);
                 //background-color: rgb(220, 221, 175);
                 border: 1px solid white; 
-                padding: 2px 5px; 
+                padding: 0px 5px; 
             }
         }
     }

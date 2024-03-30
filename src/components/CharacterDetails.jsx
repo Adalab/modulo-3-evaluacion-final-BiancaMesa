@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 //import heartBeat from "../images/heartbeat.png";
-import portal from "../images/portal.gif"; 
+import portalRunning from "../images/portal_running.gif"; 
 import "../scss/components/CharacterDetails.scss";
 
 function CharacterDetails({character}) {
@@ -30,7 +30,7 @@ function CharacterDetails({character}) {
         <p className="characterDetails__episodes">Episodes: {character.episodesNumber}</p>
     </li>
     <footer className="characterDetailsFooter">
-      <img className="characterDetailsFooter__gif" src={portal} alt="portal" />
+      <img className="characterDetailsFooter__gif" src={portalRunning} alt="portalRunning" />
     </footer>
     </>
   );

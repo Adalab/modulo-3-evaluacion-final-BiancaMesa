@@ -17,6 +17,7 @@ function App() {
   const [filterSpecies, setFilterSpecies] = useState(""); //variable que recoge el valor de la especie seleccionada 
   const [filterStatus, setFilterStatus] = useState(""); 
   const [isLoading, setIsLoading] = useState(false);
+  //const [characterSpecies, setCharacterSpecies] = useState(""); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -123,6 +124,13 @@ function App() {
     setFilterStatus("");
     filteredCharacters = [];
   };
+
+  //ICONS
+  // if (characterSpecies === "Human") {
+  //   return  characterSpecies "👤";
+  // } else {
+  //   return characterSpecies "👽";
+  // };
 
   return (
     <>

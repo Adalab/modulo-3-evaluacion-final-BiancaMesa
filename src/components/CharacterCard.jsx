@@ -2,6 +2,10 @@ import {Link} from "react-router-dom";
 import "../scss/components/CharacterCard.scss";
 
 function CharacterCard({characterData}) {
+
+    // const characterSpecies = characterData.species; 
+    //characterSpecies(characterData.species); 
+
   return (
     <li className="characterCard">
         <Link className="characterCard__link" to={`/card/${characterData.id}`}> 
@@ -13,7 +17,7 @@ function CharacterCard({characterData}) {
            
             <div className="characterCard__link--info">
                 <h4 className="characterName">{characterData.name}</h4>
-                <p className="characterSpecies">{characterData.species}</p>
+                <p className="characterSpecies">{characterData.species === "Human" ? `${characterData.species} 👤` : `${characterData.species} 👽`}</p>
 
                 <div className="more_info">   
                     <button className="more_info__btn">More info</button>

@@ -20,6 +20,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   //const [characterSpecies, setCharacterSpecies] = useState(""); 
   //const [hasCLickedDelete, setHasClickedDelete] = useState(false); 
+  //const [isVisible, setIsVisible] = useState(false); 
 
 
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
@@ -134,6 +135,12 @@ function App() {
   // } else {
   //   return characterSpecies "👽";
   // };
+
+  //TRANSICIONES CSS CHARACTER CARD 
+  // useEffect(() => {
+  //   setIsVisible(true); 
+  // }, []);  
+
 
   return (
     <>

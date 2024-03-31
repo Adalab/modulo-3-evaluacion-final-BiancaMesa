@@ -7,7 +7,9 @@ import "../scss/components/CharacterDetails.scss";
 function CharacterDetails({character}) {
   return (
     <>
-    <li className="characterDetails">
+    {/* <li className={`characterDetails ${isVisible} ? 'visible' : ''}`}> */}
+        {/* <li className={`${isVisible} ? 'characterDetails.visible' : 'characterDetails'}`}> */}
+    <li className="characterDetails" >
         <Link className="characterDetails__link" to="/">
             <p className="characterDetails__link--backToList">Back home</p>
             <i className="characterDetails__link--backToList-icon fa-solid fa-x22222"></i>

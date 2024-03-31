@@ -178,7 +178,7 @@ function App() {
             {/* </Route> */}
              
               <main className="mainCharacterDetails">
-                <CharacterDetails character={characterDetailData}/>
+                <CharacterDetails character={characterDetailData} cardId={cardId}/>
               </main>
 
               <FooterCharacterDetails />

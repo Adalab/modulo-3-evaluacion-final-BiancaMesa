@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../scss/components/CharacterDetails.scss";
 
-function CharacterDetails({ character }) {
+function CharacterDetails({ character, cardId }) {
+
+  const previousCardId = cardId - 1;
+  const nextCardId = cardId + 1;
+
   return (
     <>
+    <Link to={"/card/" + previousCardId}>
       <i className="angle fa-solid fa-angle-left"></i>
+    </Link>
 
       {/* <li className={`characterDetails ${isVisible} ? 'visible' : ''}`}> */}
       {/* <li className={`${isVisible} ? 'characterDetails.visible' : 'characterDetails'}`}> */}
@@ -58,8 +64,9 @@ function CharacterDetails({ character }) {
         </p>
       </li>
 
+      <Link to={"/card/" + nextCardId}>
       <i className="angle fa-solid fa-angle-right"></i>
-
+      </Link>
      
     </>
   );
@@ -67,6 +74,7 @@ function CharacterDetails({ character }) {
 
 CharacterDetails.propTypes = {
   character: PropTypes.object, //isRequired --> error
+  cardId: PropTypes.string.isRequired //I thought it was a number!!
 };
 
 export default CharacterDetails;

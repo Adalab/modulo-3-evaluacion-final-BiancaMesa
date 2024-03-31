@@ -10,7 +10,7 @@ Welcome to the Rick and Morty Character Search web application! This application
 * JavaScript  
 * React  
 * React Router  
-* API. The data for this website has been obtained from the Ric & Morty API: (https://rickandmortyapi.com/documentation/#character-schema)
+* API. The data for this website has been obtained from the Ric & Morty API:   https://rickandmortyapi.com/documentation/#character-schema
 * Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
@@ -18,7 +18,7 @@ Welcome to the Rick and Morty Character Search web application! This application
 You may type a character name to filter the list results, and you can narrow your search by using the added filters by species and status.
 If you click on a character, you will navigate to a detailed card including further info.
 
-*Search by Name:* Find characters by their name using the search functionality.
+*Search by Name: Find characters by their name using the search functionality.
 *Filter by Species or Status:* Narrow down your search by filtering characters based on their species or status.
 *Click on a character:* It will navigate you to a detailed card including further info.
 *Responsive Design:* Enjoy a seamless experience across various devices thanks to the responsive design.

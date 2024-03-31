@@ -18,7 +18,7 @@ Welcome to the Rick and Morty Character Search web application! This application
 You may type a character name to filter the list results, and you can narrow your search by using the added filters by species and status.
 If you click on a character, you will navigate to a detailed card including further info.
 
-*Search by Name: Find characters by their name using the search functionality.
+*Search by Name: Find characters by their name using the search functionality.  
 *Filter by Species or Status:* Narrow down your search by filtering characters based on their species or status.
 *Click on a character:* It will navigate you to a detailed card including further info.
 *Responsive Design:* Enjoy a seamless experience across various devices thanks to the responsive design.
@@ -35,18 +35,19 @@ https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
 
 *3. Install local dependencies:*
  npm install
+
 4. Start the development server 
-
  npm start
+
 5. Install sass
-
 npm install sass
+
 6. Install propTypes
-
 npm install prop-types
-7. Install React Router Dom 
 
+7. Install React Router Dom 
 npm install react-router-dom
+
 8. Start the project 
 
 npm run dev 

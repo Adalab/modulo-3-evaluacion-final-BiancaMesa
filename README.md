@@ -14,7 +14,7 @@ Welcome to the Rick and Morty Character Finder web application! This application
 * Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
-# Features 🛸
+# Features 
 * **Search by Name:** Find characters by their name using the search functionality.  
 * **Filter by Species or Status:** Narrow down your search** by filtering characters based on their species or status.
 * **Click on a character:** It will navigate you to a detailed card including further info.
@@ -25,27 +25,27 @@ Welcome to the Rick and Morty Character Finder web application! This application
 # Setting up the project 🖥️ 
 You will need to have Node.js installed on your laptop or desktop and the npm package manager 
 
-1. **Download the project or clone the repository:** 
+1. **Download the project or clone the repository:**   
 https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
 
-2. **Open the project using your code editor (Visual Studio Code or any other)**
+2. **Open the project using your code editor (Visual Studio Code or any other)**  
 
-3. **Install local dependencies:**
+3. **Install local dependencies:**  
  npm install
 
-4. **Start the development server:** 
+4. **Start the development server:**   
  npm start
 
-5. **Install sass:**
+5. **Install sass:**  
 npm install sass
 
-6. **Install propTypes:**
+6. **Install propTypes:**  
 npm install prop-types
 
-7. **Install React Router Dom:** 
+7. **Install React Router Dom:**   
 npm install react-router-dom
 
-8. **Start the project:**
+8. **Start the project:**  
 npm run dev 
 
 

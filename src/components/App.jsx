@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import {Route, Routes, useLocation, matchPath} from "react-router-dom";
 import loveGif from "../images/love.gif"; 
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
-import localStorage from "../services/localStorage";
+//import localStorage from "../services/localStorage";
 import Header from "./Header";
 import CharactersList from './CharactersList';
 import Filters from "./Filters"; 
@@ -14,78 +14,84 @@ import FooterCharacterDetails from "./FooterCharacterDetails";
 
 function App() {
 
-
-
-  //variables de estado
-  const [characters, setCharacters] = useState(localStorageCharacters); //variable de estado que recoge la información de la API
-  const [filterName, setFilterName] = useState(localStorageName); 
-  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); //variable que recoge el valor de la especie seleccionada 
-  const [filterStatus, setFilterStatus] = useState(localStorageStatus); 
-  const [isLoading, setIsLoading] = useState(false);
+  //VARIABLES DE ESTADO
+  const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
+  const [filterName, setFilterName] = useState(''); 
+  const [filterSpecies, setFilterSpecies] = useState(''); //variable que recoge el valor de la especie seleccionada 
+  const [filterStatus, setFilterStatus] = useState(''); 
+  const [isLoading, setIsLoading] = useState(false); //DELETE ???
   //const [characterSpecies, setCharacterSpecies] = useState(""); 
   //const [hasCLickedDelete, setHasClickedDelete] = useState(false); 
   //const [isVisible, setIsVisible] = useState(false); 
 
 
+  //INFORMACION DE LA API
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
   useEffect(() => {
-    const localStorageData = localStorage.get('characters', [])
-    setIsLoading(true); 
-    //la función callToApi devuelve una promesa
-    //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
-    callToApi().then((charactersData) => {
-      //Creamos un array que contenga lo mismo que charactersData pero ordenado alfabéticamente por nombre. 
-      //1. Hacemos una copia del array de objetos charactersData usando destructuring
-      //2. Lo ordenamos usando el método sort, donde a y b van a ser dos elementos del array que el método va a ir comparando. Este método recibe como parámetro una función de comparación que va a determinar el orden de los elementos 
-      const sortedCharacters = [...charactersData].sort((a, b) => {
-        //Manera simplificada: Comparamos alfabéticamente el nombre del elemento a con el nombre del elemento b 
-        //return a.name.localeCompare(b.name);
+    const localStorageCharacters = localStorage.getItem('characters')
+    if (localStorageCharacters) {
+      setCharacters(JSON.parse(localStorageCharacters)); 
+    } else { 
+      setIsLoading(true); 
+      //la función callToApi devuelve una promesa
+      //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
+      callToApi().then((charactersData) => {
+        //Creamos un array que contenga lo mismo que charactersData pero ordenado alfabéticamente por nombre. 
+        //1. Hacemos una copia del array de objetos charactersData usando destructuring
+        //2. Lo ordenamos usando el método sort, donde a y b van a ser dos elementos del array que el método va a ir comparando. Este método recibe como parámetro una función de comparación que va a determinar el orden de los elementos 
+        const sortedCharacters = [...charactersData].sort((a, b) => {
+          //Manera simplificada: Comparamos alfabéticamente el nombre del elemento a con el nombre del elemento b 
+          //return a.name.localeCompare(b.name);
 
-        //Manera no simplificada: Creamos una constante para los dos nombres que vamos a comparar. 
-        //a y b son dos elementos del array (dos objetos), accedemos a su propiedad nombre y lo ponemos en minúscula para evitar problemas
-        const nameA = a.name.toLowerCase(); 
-        const nameB = b.name.toLowerCase();
+          //Manera no simplificada: Creamos una constante para los dos nombres que vamos a comparar. 
+          //a y b son dos elementos del array (dos objetos), accedemos a su propiedad nombre y lo ponemos en minúscula para evitar problemas
+          const nameA = a.name.toLowerCase(); 
+          const nameB = b.name.toLowerCase();
 
-        //El método sort realmente lo que ordena son números así que tenemos que asignarle números a cada comparación que realicemos para que sort pueda ordenarlos. 
-        //Si el nombre A es mayor que el nombre B alfabéticamente, devuelve 1
-        if (nameA > nameB) {
-          return 1; 
-        }
+          //El método sort realmente lo que ordena son números así que tenemos que asignarle números a cada comparación que realicemos para que sort pueda ordenarlos. 
+          //Si el nombre A es mayor que el nombre B alfabéticamente, devuelve 1
+          if (nameA > nameB) {
+            return 1; 
+          }
 
-        //Si el nombre A es inferior al nombre B alfabéticamente, devuelve -1
-        if (nameA < nameB) {
-          return -1; 
-        }
+          //Si el nombre A es inferior al nombre B alfabéticamente, devuelve -1
+          if (nameA < nameB) {
+            return -1; 
+          }
 
-        //Si el nombre A es igual al nombre B alfabéticamente, devuelve 0
-        if (nameA === nameB) {
-          return 0; 
-        }
+          //Si el nombre A es igual al nombre B alfabéticamente, devuelve 0
+          if (nameA === nameB) {
+            return 0; 
+          }
+        });
+        setIsLoading(false); //poner justo despues de que el fetch responda 
+        //guardamos este array de objetos que ha recogido la petición de la API en una variable de estado para poder usar esos datos ahora en App
+        setCharacters(sortedCharacters);
+  
+        //metemos en LS la lista de characters ordenada 
+        localStorage.setItem('characters', JSON.stringify(sortedCharacters)); 
+        //console.log(charactersData); 
       });
-      setIsLoading(false); //poner justo despues de que el fetch responda 
-      //guardamos este array de objetos que ha recogido la petición de la API en una variable de estado para poder usar esos datos ahora en App
-      setCharacters(sortedCharacters);
-      //console.log(charactersData); 
-    });
+    }
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
 
 
    //LOCAL STORAGE: guardar datos 
  //Almacenamos las variables de estado con la informacion de los personajes y los filtros seleccionados en LS 
- useEffect(() => {
-  localStorage.set('characters', []); 
-  localStorage.set('filterName', ''); 
-  localStorage.set('filterSpecies', ''); 
-  localStorage.set('filterStatus', ''); 
-  console.log('Ha cambiaado X'); 
-}, [characters, filterName, filterSpecies, filterStatus]); 
+//  useEffect(() => {
+//   localStorage.set('characters', []); 
+//   localStorage.set('filterName', ''); 
+//   localStorage.set('filterSpecies', ''); 
+//   localStorage.set('filterStatus', ''); 
+//   console.log('Ha cambiaado X'); 
+// }, [characters, filterName, filterSpecies, filterStatus]); 
 
   //LOCAL STORAGE: obtener datos guardados
   //1. Creamos una variable para cada dato que queramos recoger de LS
-  const localStorageCharacters = localStorage.get('characters', []); 
-  const localStorageName = localStorage.get('filterName', ''); 
-  const localStorageSpecies = localStorage.get('filterSpecies', ''); 
-  const localStorageStatus = localStorage.get('filterStatus', ''); 
+  // const localStorageCharacters = localStorage.get('characters', []); 
+  // const localStorageName = localStorage.get('filterName', ''); 
+  // const localStorageSpecies = localStorage.get('filterSpecies', ''); 
+  // const localStorageStatus = localStorage.get('filterStatus', ''); 
 
   //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS 
 
@@ -206,7 +212,7 @@ function App() {
             {/* </Route> */}
              
               <main className="mainCharacterDetails">
-                <CharacterDetails character={characterDetailData} cardId={cardId}/>
+                <CharacterDetails character={characterDetailData} cardId={cardId} characters={characters}/>
               </main>
 
               <FooterCharacterDetails />

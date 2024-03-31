@@ -1,20 +1,52 @@
 import { Link } from "react-router-dom";
-//import heartBeat from "../images/heartbeat.png";
 import PropTypes from "prop-types";
+import localStorage from "../services/localStorage";
+import {useEffect} from "react";
+import {useParams} from "react-router-dom"; 
 import "../scss/components/CharacterDetails.scss";
 
-function CharacterDetails({ character, cardId }) {
+function CharacterDetails({ character, cardId, characters }) {
 
   const previousCardId = cardId - 1;
   const nextCardId = cardId + 1;
+
+  ///////// LOCAL STORAGE ??? ///////
+  // const { id } = useParams();
+
+  // const savedCharacter = localStorage.get('character');
+  // const characterData =
+  //   savedCharacter && parseInt(savedCharacter.id) === parseInt(id)
+  //     ? savedCharacter
+  //     : characters.find((character) => character.id === parseInt(id));
+
+  //     useEffect(() => {
+  //       if (characterData && savedCharacter.id !== characterData.id) {
+  //         localStorage.set('character', characterData);
+  //       }
+  //     }, [savedCharacter, characterData]);
+    
+  //     if (!characterData) {
+  //       return (
+  //         <div className="notFound">
+  //           <Link to="/">
+  //             <button className="detail__button">
+  //               <i className="fa-solid fa-chevron-left"></i> Back
+  //             </button>
+  //           </Link>
+  //           <p className="notFound__messagge">Sorry, character not found</p>
+  //         </div>
+  //       );
+  //     }
+
+
+ //////////
+ 
   return (
     <>
     <Link to={"/card/" + previousCardId}>
       <i className="angle fa-solid fa-angle-left"></i>
     </Link>
 
-      {/* <li className={`characterDetails ${isVisible} ? 'visible' : ''}`}> */}
-      {/* <li className={`${isVisible} ? 'characterDetails.visible' : 'characterDetails'}`}> */}
       <li className="characterDetails">
         <Link className="characterDetails__link" to="/">
           <p className="characterDetails__link--backToList">Back home</p>
@@ -42,19 +74,21 @@ function CharacterDetails({ character, cardId }) {
           {character.status === "Alive"
             ? `${character.status} `
             : `${character.status} `}
-          {/* {character.status === "Alive" &&  <img className="heart" src={heartBeat} alt="heartbeat" />} */}
+
           {character.status === "Alive" && (
             <i className="fa-solid fa-heart-pulse"></i>
           )}
+
           {character.status === "Dead" && (
             <i className="fa-solid fa-skull-crossbones"></i>
           )}
-          {/* {character.status === "unknown" && <i className="fa-solid fa-question"></i>} */}
+
           {character.status === "unknown" && `🧐`}
         </p>
 
         <p className="characterDetails__origin">
-          <strong className="subtitles">Origin:</strong> {character.planet}
+          <strong className="subtitles">Origin:</strong> 
+          {character.planet}
         </p>
 
         <p className="characterDetails__episodes">
@@ -64,7 +98,7 @@ function CharacterDetails({ character, cardId }) {
       </li>
 
       <Link to={"/card/" + nextCardId}>
-      <i className="angle fa-solid fa-angle-right"></i>
+        <i className="angle fa-solid fa-angle-right"></i>
       </Link>
      
     </>

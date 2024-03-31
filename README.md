@@ -17,7 +17,7 @@ http://beta.adalab.es/modulo-3-evaluacion-final-BiancaMesa/
 * Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
-# Features 🔭⭑⋆ 🛸 
+# Features 🔭๋࣭ 🛸 
 * **Search by Name:** Find characters by their name using the search functionality.  
 * **Filter by Species or Status:** Narrow down your search** by filtering characters based on their species or status.
 * **Click on a character:** It will navigate you to a detailed card including further info.

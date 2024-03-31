@@ -4,40 +4,36 @@ Welcome to the Rick and Morty Character Search web application! This application
 
 
 # Technologies Used
-. HTML
-. CSS
-. SASS
-. JavaScript
-. React
-. React Router
-. API. The data for this website has been obtained from the Ric & Morty API: (https://rickandmortyapi.com/documentation/#character-schema)
-. Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
+* HTML  
+* CSS  
+* SASS  
+* JavaScript  
+* React  
+* React Router  
+* API. The data for this website has been obtained from the Ric & Morty API: (https://rickandmortyapi.com/documentation/#character-schema)
+* Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
 # Features
-
 You may type a character name to filter the list results, and you can narrow your search by using the added filters by species and status.
 If you click on a character, you will navigate to a detailed card including further info.
 
-Search by Name: Find characters by their name using the search functionality.
-Filter by Species or Status: Narrow down your search by filtering characters based on their species or status.
-Click on a character: It will navigate you to a detailed card including further info.
-Responsive Design: Enjoy a seamless experience across various devices thanks to the responsive design.
-Local Storage: Your preferences and search history are stored locally for a personalized experience.
-
+*Search by Name:* Find characters by their name using the search functionality.
+*Filter by Species or Status:* Narrow down your search by filtering characters based on their species or status.
+*Click on a character:* It will navigate you to a detailed card including further info.
+*Responsive Design:* Enjoy a seamless experience across various devices thanks to the responsive design.
+*Local Storage:* Your preferences and search history are stored locally for a personalized experience.
 
 
 # Setting up the project 
 You will need to have Node.js installed on your laptop or desktop and the npm package manager 
 
-1. Download the project or clone the repository
-
+*1. Download the project or clone the repository*  
 https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
 
+*2. Open the project using your code editor (Visual Studio Code or any other)*
 
-2. Open the project using your code editor (Visual Studio Code or any other)
-3. Install local dependencies
-
+*3. Install local dependencies:*
  npm install
 4. Start the development server 
 

@@ -3,7 +3,7 @@
 Welcome to the Rick and Morty Character Search web application! This application allows you to search for characters from the popular animated TV show "Rick and Morty." Users can search characters by name or filter them by species or status (dead, alive or unknown). The design is responsive, ensuring a seamless experience across different devices.
 
 
-# Technologies Used
+# Technologies Used 🚀🛸
 * HTML  
 * CSS  
 * SASS  
@@ -14,18 +14,18 @@ Welcome to the Rick and Morty Character Search web application! This application
 * Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
-# Features
+# Features 🛸
 You may type a character name to filter the list results, and you can narrow your search by using the added filters by species and status.
 If you click on a character, you will navigate to a detailed card including further info.
 
-*Search by Name: Find characters by their name using the search functionality.  
-*Filter by Species or Status:* Narrow down your search by filtering characters based on their species or status.
-*Click on a character:* It will navigate you to a detailed card including further info.
+_Search by Name_ Find characters by their name using the search functionality.  
+*Filter by Species or Status:* Narrow down your search by filtering characters based on their species or status.*
+_Click on a character:* It will navigate you to a detailed card including further info._
 *Responsive Design:* Enjoy a seamless experience across various devices thanks to the responsive design.
 *Local Storage:* Your preferences and search history are stored locally for a personalized experience.
 
 
-# Setting up the project 
+# Setting up the project 🖥️ 💻
 You will need to have Node.js installed on your laptop or desktop and the npm package manager 
 
 1. Download the project or clone the repository: 
@@ -53,4 +53,4 @@ npm run dev
 
 
 # Author 
-Projected developed by Bianca Mesa ✨
+Projected developed by [Bianca Mesa](https://github.com/BiancaMesa) ✨

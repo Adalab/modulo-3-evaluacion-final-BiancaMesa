@@ -10,7 +10,7 @@ Welcome to the Rick and Morty Character Search web application! This application
 . JavaScript
 . React
 . React Router
-. API. The data for this website has been obtained from the Ric & Morty API: [text](https://rickandmortyapi.com/documentation/#character-schema)
+. API. The data for this website has been obtained from the Ric & Morty API: (https://rickandmortyapi.com/documentation/#character-schema)
 . Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
 
 
@@ -30,23 +30,29 @@ Local Storage: Your preferences and search history are stored locally for a pers
 # Setting up the project 
 You will need to have Node.js installed on your laptop or desktop and the npm package manager 
 
-1. Download the project or clone the repository 
+1. Download the project or clone the repository
+
 https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
 
-[text](https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git)
 
 2. Open the project using your code editor (Visual Studio Code or any other)
-3. Install local dependencies 
+3. Install local dependencies
+
  npm install
 4. Start the development server 
+
  npm start
 5. Install sass
+
 npm install sass
-6. Install propTypes 
+6. Install propTypes
+
 npm install prop-types
 7. Install React Router Dom 
+
 npm install react-router-dom
 8. Start the project 
+
 npm run dev 
 
 

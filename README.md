@@ -2,7 +2,7 @@
 
 Welcome to the Rick and Morty Character Finder web application! This application allows you to search for characters from the popular animated TV show "Rick and Morty." Users can search characters by name or filter them by species or status. The design is responsive, ensuring a seamless experience across different devices.
 
-**Website**
+**Website: **
 http://beta.adalab.es/modulo-3-evaluacion-final-BiancaMesa/ 
 
 
@@ -52,5 +52,5 @@ npm install react-router-dom
 npm run dev 
 
 
-# Author 💁🏼‍♀️ 👩🏼‍💻 🧘🏼‍♀️
+# Author 👩🏼‍💻 
 Projected developed by [Bianca Mesa](https://github.com/BiancaMesa) ✨

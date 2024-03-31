@@ -1,8 +1,54 @@
-# React + Vite
+# Rick and Morty Character Finder 👽 🌌
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Rick and Morty Character Search web application! This application allows you to search for characters from the popular animated TV show "Rick and Morty." Users can search characters by name or filter them by species or status (dead, alive or unknown). The design is responsive, ensuring a seamless experience across different devices.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technologies Used
+. HTML
+. CSS
+. SASS
+. JavaScript
+. React
+. React Router
+. API. The data for this website has been obtained from the Ric & Morty API: [text](https://rickandmortyapi.com/documentation/#character-schema)
+. Utilization of React Components, controlled forms, props, lifting, PropTypes, local storage, and React Router. 
+
+
+# Features
+
+You may type a character name to filter the list results, and you can narrow your search by using the added filters by species and status.
+If you click on a character, you will navigate to a detailed card including further info.
+
+Search by Name: Find characters by their name using the search functionality.
+Filter by Species or Status: Narrow down your search by filtering characters based on their species or status.
+Click on a character: It will navigate you to a detailed card including further info.
+Responsive Design: Enjoy a seamless experience across various devices thanks to the responsive design.
+Local Storage: Your preferences and search history are stored locally for a personalized experience.
+
+
+
+# Setting up the project 
+You will need to have Node.js installed on your laptop or desktop and the npm package manager 
+
+1. Download the project or clone the repository 
+https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
+
+[text](https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git)
+
+2. Open the project using your code editor (Visual Studio Code or any other)
+3. Install local dependencies 
+ npm install
+4. Start the development server 
+ npm start
+5. Install sass
+npm install sass
+6. Install propTypes 
+npm install prop-types
+7. Install React Router Dom 
+npm install react-router-dom
+8. Start the project 
+npm run dev 
+
+
+# Author 
+Projected developed by Bianca Mesa 😊

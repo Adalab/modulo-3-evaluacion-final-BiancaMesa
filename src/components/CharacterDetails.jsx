@@ -7,7 +7,6 @@ function CharacterDetails({ character, cardId }) {
 
   const previousCardId = cardId - 1;
   const nextCardId = cardId + 1;
-
   return (
     <>
     <Link to={"/card/" + previousCardId}>
@@ -29,7 +28,7 @@ function CharacterDetails({ character, cardId }) {
         />
 
         <h4 className="characterDetails__name">{character.name}</h4>
-
+        
         <p className="characterDetails__species">
           <strong className="subtitles">Species: </strong>
           {character.species === "Human"

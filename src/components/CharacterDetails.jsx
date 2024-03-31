@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import localStorage from "../services/localStorage";
-import {useEffect} from "react";
-import {useParams} from "react-router-dom"; 
+// import localStorage from "../services/localStorage";
+// import {useEffect} from "react";
+// import {useParams} from "react-router-dom"; 
 import "../scss/components/CharacterDetails.scss";
 
-function CharacterDetails({ character, cardId, characters }) {
+function CharacterDetails({ character, cardId }) {
 
   const previousCardId = cardId - 1;
   const nextCardId = cardId + 1;

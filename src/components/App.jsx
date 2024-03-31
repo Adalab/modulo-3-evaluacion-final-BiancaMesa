@@ -28,10 +28,10 @@ function App() {
   //INFORMACION DE LA API
   //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito 
   useEffect(() => {
-    const localStorageCharacters = localStorage.getItem('characters')
-    if (localStorageCharacters) {
-      setCharacters(JSON.parse(localStorageCharacters)); 
-    } else { 
+    // const localStorageCharacters = localStorage.getItem('characters')
+    // if (localStorageCharacters) {
+    //   setCharacters(JSON.parse(localStorageCharacters)); 
+    // } else { 
       setIsLoading(true); 
       //la función callToApi devuelve una promesa
       //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
@@ -69,10 +69,10 @@ function App() {
         setCharacters(sortedCharacters);
   
         //metemos en LS la lista de characters ordenada 
-        localStorage.setItem('characters', JSON.stringify(sortedCharacters)); 
+        // localStorage.setItem('characters', JSON.stringify(sortedCharacters)); 
         //console.log(charactersData); 
       });
-    }
+    // }
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
 
 
@@ -164,17 +164,7 @@ function App() {
     //setHasClickedDelete(true); 
   };
 
-  //ICONS
-  // if (characterSpecies === "Human") {
-  //   return  characterSpecies "👤";
-  // } else {
-  //   return characterSpecies "👽";
-  // };
 
-  //TRANSICIONES CSS CHARACTER CARD 
-  // useEffect(() => {
-  //   setIsVisible(true); 
-  // }, []);  
 
 
   return (

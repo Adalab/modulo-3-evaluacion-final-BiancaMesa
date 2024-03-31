@@ -10,6 +10,10 @@
     margin-bottom: 20px;
     position: relative; 
 
+    @media screen and (max-width: 480px) {
+        padding-top: 40px; 
+    }
+
     &__portal {
         width: 70px; 
         height: 70px; 
@@ -18,6 +22,12 @@
         top: 40px; 
         left: 40px; 
         cursor: pointer; 
+    
+        @media screen and (max-width: 480px) {
+            top: 10px; 
+            left: 190px; 
+
+        }
 
     }
 
@@ -47,6 +57,12 @@
     //     position: absolute; 
     //     top: 20px; 
     //     left: 100px; 
+
+         @media screen and (max-width: 480px) {
+            top: 20px;
+            left: 50px;
+         }
+
         }
 
         &--imageBoys {
@@ -54,6 +70,11 @@
             border: 1px solid white;
             box-shadow: 0px 0px 5px 1px rgb(255, 252, 252);
            // position: relative; 
+
+
+           @media screen and (max-width: 480px) {
+            width: 70vh; 
+           }
         }
     }
     

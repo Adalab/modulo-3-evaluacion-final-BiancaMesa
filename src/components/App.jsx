@@ -8,6 +8,7 @@ import Filters from "./Filters";
 import HeaderCharacterDetails from "./HeaderCharacterDetails";
 import CharacterDetails from "./CharacterDetails"; 
 import '../scss/App.scss'; 
+import FooterCharacterDetails from "./FooterCharacterDetails";
 
 
 function App() {
@@ -179,6 +180,8 @@ function App() {
               <main className="mainCharacterDetails">
                 <CharacterDetails character={characterDetailData}/>
               </main>
+
+              <FooterCharacterDetails />
             </>           
           } 
           />

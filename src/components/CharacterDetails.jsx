@@ -19,9 +19,9 @@ function CharacterDetails({character}) {
 
         <h4 className="characterDetails__name">{character.name}</h4>
 
-        <p>Species: {character.species === "Human" ? `${character.species} 👤` : `${character.species} 👽`}</p>
+        <p className="characterDetails__species"><strong className="subtitles" >Species: </strong>{character.species === "Human" ? `${character.species} 👤` : `${character.species} 👽`}</p>
 
-        <p>Status: {character.status === "Alive" ? `${character.status} ` : `${character.status} `}
+        <p className="characterDetails__status"> <strong className="subtitles">Status:</strong> {character.status === "Alive" ? `${character.status} ` : `${character.status} `}
           {/* {character.status === "Alive" &&  <img className="heart" src={heartBeat} alt="heartbeat" />} */}
           {character.status === "Alive" &&  <i className="fa-solid fa-heart-pulse"></i>}
           {character.status === "Dead" && <i className="fa-solid fa-skull-crossbones"></i>}
@@ -29,8 +29,9 @@ function CharacterDetails({character}) {
           {character.status === "unknown" && `🧐`}
         </p>
        
-        <p>Origin: {character.planet}</p>
-        <p className="characterDetails__episodes">Episodes: {character.episodesNumber}</p>
+        <p className="characterDetails__origin"><strong className="subtitles">Origin:</strong> {character.planet}</p>
+
+        <p className="characterDetails__episodes"><strong className="subtitles">Episodes:</strong> {character.episodesNumber}</p>
     </li>
     <footer className="characterDetailsFooter">
       <img className="characterDetailsFooter__gif" src={portalRunning} alt="portalRunning" />

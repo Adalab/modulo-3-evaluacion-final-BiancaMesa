@@ -40,10 +40,14 @@
     color: white; 
     background-color: rgba(86, 187, 241, 0.6); //le hemos cambiado la opacidad en background-color
     gap: 5px; 
-    //font-size: 17px;
-    //opacity: 0; 
-    //transform: translateY(-20px); 
-    //transition: opacity 0.8s ease, transform 0.8s ease; 
+    
+    // font-family: "Wellfleet", monospace;
+    // font-weight: 400;
+    // font-style: normal;
+
+//     font-family: "Courier Prime", monospace;
+//   font-weight: 400;
+//   font-style: normal;
 
     animation-duration: 2s infinite;
     animation-name: zoom-in;
@@ -84,6 +88,10 @@
         }
     }
 
+    .subtitles {
+        color: rgb(95, 170, 141);
+    }
+
     &__image {
         width: 200px; 
         margin: 20px 0 10px; 
@@ -95,10 +103,24 @@
         font-size: 30px;
     }
 
+    &__species {
+        font-size: 20px;
+    }
+
+    &__status {
+        font-size: 20px;
+    }
+
+    &__origin {
+        font-size: 20px;
+    }
+
     &__episodes {
         margin-bottom: 20px;
+        font-size: 20px;
     }
 }
+
 
 .characterDetailsFooter {
     display: flex; 

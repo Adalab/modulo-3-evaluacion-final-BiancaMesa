@@ -3,7 +3,7 @@
 //función asíncrona que hace la petición al servidor 
 const callToApi = () => {
     return fetch ("https://rickandmortyapi.com/api/character")
-    // return fetch ("https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json")
+    //return fetch ("https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json")
         .then ((response) => response.json())
         .then ((data) => {
             //nos creamos un array de objetos que contenga sólo la información que necesitamos de la API 

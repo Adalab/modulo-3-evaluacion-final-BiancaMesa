@@ -10,6 +10,7 @@ import HeaderCharacterDetails from "./HeaderCharacterDetails";
 import CharacterDetails from "./CharacterDetails";
 import "../scss/App.scss";
 import FooterCharacterDetails from "./FooterCharacterDetails";
+import NoPageFound from "./NoPageFound";
 
 function App() {
   //VARIABLES DE ESTADO
@@ -214,6 +215,8 @@ function App() {
             </>
           }
         />
+
+        <Route path="*" element={<NoPageFound />}/>
       </Routes>
     </>
   );

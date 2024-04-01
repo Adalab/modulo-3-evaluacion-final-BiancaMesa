@@ -8,6 +8,9 @@ function FilterByName({onChangeName, valueName}) {
     };
 
     //Al hacer click en la tecla Enter, evita que se refresque la página (comportamiento predeterminado del navegador)
+    //Evento onKeyDown: al presionar una tecla se ejecuta la función manejadora handleKeyPress
+    //En esta función vamos a especificar que de todas las teclas que podemos presionar, queremos la de Enter
+    //Y el código que queremos ejecutar es un event.preventDefault() porque lo que queremos es que se evite el resfrescar la página que lo tienen como automático los inputs
     const handleKeyPress = (event) => {
         if (event.key == 'Enter') {
           event.preventDefault(); 
@@ -23,7 +26,7 @@ function FilterByName({onChangeName, valueName}) {
           id="name" 
           placeholder="Search character..." 
           onChange={handleChange} 
-          onKeyUp={handleKeyPress}
+          onKeyDown={handleKeyPress}
           value={valueName}
         />
         {/* <img className="filter__byName--gif" src="./src/images/rick_and_morty2.jpg" alt="rick" /> */}

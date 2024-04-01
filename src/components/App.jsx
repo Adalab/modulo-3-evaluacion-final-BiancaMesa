@@ -97,8 +97,6 @@ function App() {
 
 
   
-
-
   //FILTERS
   //Filter by name
   const handleChangeName = (value) => {

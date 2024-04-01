@@ -1,139 +1,85 @@
-
 .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px; 
-    //padding-top: 90px; 
-    padding-top: 20px; 
+    gap: 20px;
+
+    padding-top: 20px;
     margin-bottom: 20px;
-    position: relative; 
+    position: relative;
 
     @media screen and (max-width: 480px) {
-        padding-top: 40px; 
+        padding-top: 40px;
     }
 
     &__portal {
-        width: 70px; 
-        height: 70px; 
-        //margin-left: -50px; 
-        position: absolute; 
-        top: 40px; 
-        left: 40px; 
-        cursor: pointer; 
+        width: 70px;
+        height: 70px;
+
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        cursor: pointer;
 
         @media screen and (max-width: 375px) {
-            top: 10px; 
-            left: 40%; 
-         }
-    
+            top: 10px;
+            left: 40%;
+        }
+
         @media screen and (max-width: 480px) {
-            top: 10px; 
-            left: 190px; 
+            top: 10px;
+            left: 190px;
 
         }
 
     }
 
-    // &__imageLogo {
-    //     width: 350px; 
-    //     margin-left: 165px; 
-    //     position: absolute; 
-    //     top: 20px; 
-    //     left: 100px; 
-    //     // position: absolute; 
-    //     // top: -45px; 
-    //     //right: -170px; 
-    // }
-    
-    
+
+
+
     &__imageAndLogo {
         display: flex;
         flex-direction: column;
-        //position: relative;
+
 
         &--logo {
-            width: 350px; 
-            position: relative; 
-            top: 20px; 
-            left: 120px; 
-    //     margin-left: 165px; 
-    //     position: absolute; 
-    //     top: 20px; 
-    //     left: 100px; 
+            width: 350px;
+            position: relative;
+            top: 20px;
+            left: 120px;
 
 
-        @media screen and (max-width: 375px) {
-            top: 20px;
-            left: 10px;
-        }
-         @media screen and (max-width: 480px) {
-            top: 20px;
-            left: 50px;
-         }
+
+            @media screen and (max-width: 375px) {
+                top: 20px;
+                left: 10px;
+            }
+
+            @media screen and (max-width: 480px) {
+                top: 20px;
+                left: 50px;
+            }
 
         }
 
         &--imageBoys {
-            width: 600px; 
+            width: 600px;
             border: 1px solid white;
             box-shadow: 0px 0px 5px 1px rgb(255, 252, 252);
             align-self: center;
-           // position: relative; 
 
-           @media screen and (max-width: 375px) {
-            width: 90vw; 
-            //align-self: center;
-           }
 
-           @media screen and (max-width: 480px) {
-            width: 90vw; 
-           }
+            @media screen and (max-width: 375px) {
+                width: 90vw;
+            }
+
+            @media screen and (max-width: 480px) {
+                width: 90vw;
+            }
         }
     }
-    
-    // &__upperPart {
-    //     display: flex;
-    //     flex-direction: row;
-    //     //justify-content: start;
-    //     //align-content: start;
-    //     //align-items: end;
-    //     //position: relative; 
-    //     //animation: beat .40s infinite alternate;
-    //     position: absolute; 
-    //     top: 20px; 
-    //     left: 20px; 
-        
 
-    //     &--portal {
-    //         width: 70px; 
-    //         height: 70px; 
-    //         //margin-left: -50px; 
-    //         // position: absolute; 
-    //         // top: -45px; 
-    //        // right: 350px; 
-    //         cursor: pointer; 
-    //         //position: absolute; 
-    //         //top: 20px; 
-    //         //left: -80px; 
-    //     }
-        
-    //     &--imageLogo {
-    //     width: 350px; 
-    //     margin-left: 165px; 
-    //     // position: absolute; 
-    //     // top: 20px; 
-    //     // left: 300px; 
-    //     // position: absolute; 
-    //     // top: -45px; 
-    //     //right: -170px; 
-    //     }
-    // }
 
-    // &__imageBoys {
-    //     width: 500px; 
-    //     border: 1px solid white;
-    //     box-shadow: 0px 0px 5px 1px rgb(255, 252, 252);
-    // }
+
 }

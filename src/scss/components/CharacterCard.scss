@@ -1,77 +1,78 @@
 .characterCard {
     list-style: none;
     text-align: center;
-    margin: 0 20px 30px 20px; 
+    margin: 0 20px 30px 20px;
 
     &__link {
         text-decoration: none;
 
         &--images {
-            position: relative; 
+            position: relative;
             display: flex;
 
             &:hover {
                 border-radius: 60px 60px 0 0;
             }
-           
+
             .frontImage {
-                width: 200px; 
+                width: 200px;
                 border-radius: 50%;
-                border: 1px solid rgb(110, 145, 214); 
+                border: 1px solid rgb(110, 145, 214);
                 margin-bottom: 10px;
 
                 &:hover {
                     transform: scale(1.1);
-                    border: 3px solid rgb(110, 214, 153); 
+                    border: 3px solid rgb(110, 214, 153);
                 }
             }
         }
 
-       
+
         &--info {
-            padding: 10px 0; 
+            padding: 10px 0;
             border-radius: 8px;
-            color: black; 
-            background: rgb(2,0,36);
-            background: linear-gradient(90deg, rgb(50, 46, 135) 0%, rgb(155, 155, 197) 35%, rgba(0,212,255,1) 100%);
+            color: black;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(90deg, rgb(50, 46, 135) 0%, rgb(155, 155, 197) 35%, rgba(0, 212, 255, 1) 100%);
 
             .characterName {
                 font-size: 20px;
                 margin: 5px 0 5px 0;
             }
-            
+
 
             .more_info {
-                display: flex; 
+                display: flex;
                 justify-content: center;
 
                 &__btn {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    padding: 10px 20px; 
+                    padding: 10px 20px;
                     margin-top: 10px;
-                    cursor: pointer; 
+                    cursor: pointer;
                     font-size: 15px;
                     font-weight: bold;
                     background-color: white;
-                    color: #3364a3;  
+                    color: #3364a3;
                     border-radius: 10px;
-                    border: 1px solid rgb(119, 197, 119); 
+                    border: 1px solid rgb(119, 197, 119);
                     opacity: 0.8;
 
                     &:hover {
                         background-color: #3364a3;
-                        color: white; 
+                        color: white;
                     }
 
                 }
 
+
             }
-               
+
         }
 
 
     }
-   
+
 }

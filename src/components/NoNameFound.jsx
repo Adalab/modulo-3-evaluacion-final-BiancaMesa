@@ -13,7 +13,7 @@ function NoNameFound({ message }) {
       )}
       {message && (
         <img
-          className="noNameFoundContainer__gif"
+          className="noNameFoundContainer__image"
           src={rickBadLook}
           alt="rickBadLook"
         />

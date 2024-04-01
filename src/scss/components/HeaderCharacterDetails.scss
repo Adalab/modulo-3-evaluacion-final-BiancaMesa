@@ -1,22 +1,13 @@
-
 .headerCharacterDetails {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // gap: 20px; 
-    padding-top: 50px; 
+
+    padding-top: 50px;
     margin-bottom: 50px;
-    // position: relative; 
+
     text-align: center;
-    
+
     &__imageLogo {
-        width: 350px; 
-        // position: absolute; 
-        // top: 0; 
+        width: 350px;
+
     }
 
-    // &__imageBoys {
-    //     width: 500px; 
-    // }
 }

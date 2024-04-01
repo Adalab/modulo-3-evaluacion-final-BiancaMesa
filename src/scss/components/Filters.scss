@@ -5,12 +5,14 @@
     justify-content: center;
     color: white; 
 
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 375px) {
         display: flex; 
         //flex-direction: row;
         flex-wrap: wrap;
-
     }
+
+    // @media screen and (max-width: 736px) {
+    // }
 }
 
 .filter {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, matchPath } from "react-router-dom";
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
-//import localStorage from "../services/localStorage";
+import localStorage from "../services/localStorage";
 import Header from "./Header";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
@@ -13,10 +13,19 @@ import FooterCharacterDetails from "./FooterCharacterDetails";
 
 function App() {
   //VARIABLES DE ESTADO
+  //LOCAL STORAGE: obtener datos guardados
+  //1. Creamos una variable para cada dato que queramos recoger de LS 
+  //y llamamos a la función get (el objeto localStorage tiene como propiedad la función get). La función get recibe dos parámetros: uno es el key, el nombre que queremos darle al valor que queremos guardar y dos es el valor inicial que queremos darle a ese dato que estamos guardando 
+  const localStorageName = localStorage.get('filterName', '');
+  const localStorageSpecies = localStorage.get('filterSpecies', ''); 
+  const localStorageStatus = localStorage.get('filterStatus', '');
+
+
+  //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
   const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
-  const [filterName, setFilterName] = useState("");
-  const [filterSpecies, setFilterSpecies] = useState(""); //variable que recoge el valor de la especie seleccionada
-  const [filterStatus, setFilterStatus] = useState("");
+  const [filterName, setFilterName] = useState(localStorageName);
+  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); //variable que recoge el valor de la especie seleccionada
+  const [filterStatus, setFilterStatus] = useState(localStorageStatus);
   const [isLoading, setIsLoading] = useState(false); //DELETE ???
   //const [characterSpecies, setCharacterSpecies] = useState("");
   //const [hasCLickedDelete, setHasClickedDelete] = useState(false);
@@ -72,24 +81,21 @@ function App() {
     // }
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
 
+
   //LOCAL STORAGE: guardar datos
   //Almacenamos las variables de estado con la informacion de los personajes y los filtros seleccionados en LS
-  //  useEffect(() => {
-  //   localStorage.set('characters', []);
-  //   localStorage.set('filterName', '');
-  //   localStorage.set('filterSpecies', '');
-  //   localStorage.set('filterStatus', '');
-  //   console.log('Ha cambiaado X');
-  // }, [characters, filterName, filterSpecies, filterStatus]);
+  //UseEffect: lo que hace es que cada vez que se cambie la variable de estado que le hemos dado, que se actualice y la vuelva a pintar
+  //La función set que es una propiedad del objeto localStorage tiene dos parámetros, uno el key (nombre con el que queremos guardar nuestros datos) y dos el valor (el valor que queremos guardar en LS, la variable de estado)
+  //UseEffect es una función que tiene como primer parámetro una función y como segundo parámetro las keys de los valores que queremos que vaya actualizando cada vez que haya un cambio.
+   useEffect(() => {
+    localStorage.set('filterName', filterName);
+    localStorage.set('filterSpecies', filterSpecies); 
+    localStorage.set('filterStatus', filterStatus); 
+  }, [filterName, filterSpecies, filterStatus]);
 
-  //LOCAL STORAGE: obtener datos guardados
-  //1. Creamos una variable para cada dato que queramos recoger de LS
-  // const localStorageCharacters = localStorage.get('characters', []);
-  // const localStorageName = localStorage.get('filterName', '');
-  // const localStorageSpecies = localStorage.get('filterSpecies', '');
-  // const localStorageStatus = localStorage.get('filterStatus', '');
 
-  //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
+  
+
 
   //FILTERS
   //Filter by name
@@ -141,7 +147,7 @@ function App() {
   //3. El id que buscamos está en el objeto en cardDetailRoute.params.cardId. Creamos una constante en la que recogamos ese valor siempre y cuando se haya encontrado una ruta para ese id, de lo contrario en la constante se almacenará un string vacío.
   //Le hacemos un parseInt al id que nos viene del navegador porque el navegador nos lo da como string y nosotras queremos el dato en número
   const cardId =
-    cardDetailRoute !== null ? parseInt(cardDetailRoute.params.cardId) : "";
+    cardDetailRoute !== null ? parseInt(cardDetailRoute.params.cardId) : 0;
 
   //Buscamos en la variable de estado characters (array de objetos con la info de la API) el character que coincida con el id de la ruta. Find nos va a devolver el primer elemento que cumpla con la condición. Esa información se la vamos a pasar por props al componente que queremos pintar cuando el usuario haga click en un character
   const characterDetailData = characters.find((character) => {

@@ -107,7 +107,7 @@ function CharacterDetails({ character, cardId }) {
 
 CharacterDetails.propTypes = {
   character: PropTypes.object, //isRequired --> error
-  cardId: PropTypes.string.isRequired //I thought it was a number!!
+  cardId: PropTypes.number.isRequired //I thought it was a number!!
 };
 
 export default CharacterDetails;

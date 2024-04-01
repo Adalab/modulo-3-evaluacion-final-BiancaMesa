@@ -79,7 +79,7 @@ function CharacterDetails({ character, cardId }) {
 }
 
 CharacterDetails.propTypes = {
-  character: PropTypes.object, //isRequired --> error
+  character: PropTypes.object, 
   cardId: PropTypes.number.isRequired,
 };
 

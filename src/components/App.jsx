@@ -25,18 +25,12 @@ function App() {
   const [filterName, setFilterName] = useState(localStorageName);
   const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); 
   const [filterStatus, setFilterStatus] = useState(localStorageStatus);
-  //IS LOADING
-  const [isLoading, setIsLoading] = useState(false); //DELETE ???
-  //const [characterSpecies, setCharacterSpecies] = useState("");
-  //const [hasCLickedDelete, setHasClickedDelete] = useState(false);
-  //const [isVisible, setIsVisible] = useState(false);
+
 
   //API
   useEffect(() => {
-    setIsLoading(true);
     callToApi().then((charactersData) => {
       //Creamos un array que contenga lo mismo que charactersData pero ordenado alfabéticamente por nombre.
-      
       const sortedCharacters = [...charactersData].sort((a, b) => {
         const nameA = a.name.toLowerCase();
         const nameB = b.name.toLowerCase();
@@ -53,14 +47,13 @@ function App() {
           return 0;
         }
       });
-      setIsLoading(false); //poner justo despues de que el fetch responda
       
       setCharacters(sortedCharacters);
 
     });
   }, []); 
 
-  //LOCAL STORAGE: guardar datos
+  //LOCAL STORAGE: guardamos los datos
   useEffect(() => {
     localStorage.set("filterName", filterName);
     localStorage.set("filterSpecies", filterSpecies);
@@ -105,17 +98,12 @@ function App() {
       : "";
 
   //RUTA DINÁMICA:
-  //Para obtener el id de la ruta
-  //1. Usamos el hook useLocation para obtener el id de la ruta actual, la URL
   const { pathname } = useLocation();
-  //2. Creamos una constante (es un objeto) en la que vamos a usar matchPath para comprobar si la ruta actual (pathname) coincide con la ruta dinámica deseada (/card/cardId). Si coincide, nos devolverá un objeto con información, entre ella el número de id que buscamos
   const cardDetailRoute = matchPath("/card/:cardId", pathname);
-  //3. El id que buscamos está en el objeto en cardDetailRoute.params.cardId. Creamos una constante en la que recogamos ese valor siempre y cuando se haya encontrado una ruta para ese id, de lo contrario en la constante se almacenará un string vacío.
-  //Le hacemos un parseInt al id que nos viene del navegador porque el navegador nos lo da como string y nosotras queremos el dato en número
   const cardId =
     cardDetailRoute !== null ? parseInt(cardDetailRoute.params.cardId) : 0;
 
-  //Buscamos en la variable de estado characters (array de objetos con la info de la API) el character que coincida con el id de la ruta. Find nos va a devolver el primer elemento que cumpla con la condición. Esa información se la vamos a pasar por props al componente que queremos pintar cuando el usuario haga click en un character
+  //Buscamos en la variable de estado characters el character que coincida con el id de la ruta
   const characterDetailData = characters.find((character) => {
     return character.id === cardId;
   });
@@ -149,7 +137,6 @@ function App() {
                 <CharactersList
                   characters={filteredCharacters}
                   message={noNameFoundMessage}
-                  isLoading={isLoading}
                 />
               </main>
 

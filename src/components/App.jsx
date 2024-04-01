@@ -178,7 +178,6 @@ function App() {
         />
 
         <Route path="*" element={<NoPageFound />} />
-        <Route path="/card/:/*" element={<NoPageFound />} />
       </Routes>
     </>
   );

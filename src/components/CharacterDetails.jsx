@@ -6,6 +6,17 @@ function CharacterDetails({ character, cardId }) {
   const previousCardId = cardId - 1;
   const nextCardId = cardId + 1;
 
+  if (!character) {
+    return (
+      <div className="noElementFound">
+        <h1>Error - Element not found</h1>
+        <p>Ooops! The element you are looking for doesn't exit.</p>
+        <Link to="/">
+          <button className="noElementFound__button">Back home</button>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -69,7 +80,7 @@ function CharacterDetails({ character, cardId }) {
 
 CharacterDetails.propTypes = {
   character: PropTypes.object, //isRequired --> error
-  cardId: PropTypes.number.isRequired, //I thought it was a number!!
+  cardId: PropTypes.number.isRequired,
 };
 
 export default CharacterDetails;

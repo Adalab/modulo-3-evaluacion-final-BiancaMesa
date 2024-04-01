@@ -8,7 +8,7 @@ function NoPageFound() {
       <p>Ooops! The page you are looking for doesn't exit.</p>
 
       <Link to="/">
-        <button className="noPageFoundContainer__button">Back to home</button>
+        <button className="noPageFoundContainer__button">Back home</button>
       </Link>
     </div>
   );

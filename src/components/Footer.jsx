@@ -1,4 +1,4 @@
-import loveGif from "../images/love.gif"; 
+import loveGif from "../images/love.gif";
 import "../scss/components/Footer.scss";
 
 function Footer() {

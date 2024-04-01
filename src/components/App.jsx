@@ -15,13 +15,12 @@ import NoPageFound from "./NoPageFound";
 function App() {
   //VARIABLES DE ESTADO
   //LOCAL STORAGE: obtener datos guardados
-  //1. Creamos una variable para cada dato que queramos recoger de LS 
-  //y llamamos a la función get (el objeto localStorage tiene como propiedad la función get). La función get recibe dos parámetros: uno es el key, el nombre que queremos darle al valor que queremos guardar y dos es el valor inicial que queremos darle a ese dato que estamos guardando 
-  const localStorageName = localStorage.get('filterName', '');
-  const localStorageSpecies = localStorage.get('filterSpecies', ''); 
-  const localStorageStatus = localStorage.get('filterStatus', '');
-  const localStorageCharacters = localStorage.get('characters', [])
-
+  //1. Creamos una variable para cada dato que queramos recoger de LS
+  //y llamamos a la función get (el objeto localStorage tiene como propiedad la función get). La función get recibe dos parámetros: uno es el key, el nombre que queremos darle al valor que queremos guardar y dos es el valor inicial que queremos darle a ese dato que estamos guardando
+  const localStorageName = localStorage.get("filterName", "");
+  const localStorageSpecies = localStorage.get("filterSpecies", "");
+  const localStorageStatus = localStorage.get("filterStatus", "");
+  const localStorageCharacters = localStorage.get("characters", []);
 
   //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
   const [characters, setCharacters] = useState(localStorageCharacters); //variable de estado que recoge la información de la API
@@ -83,21 +82,18 @@ function App() {
     // }
   }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
 
-
   //LOCAL STORAGE: guardar datos
   //Almacenamos las variables de estado con la informacion de los personajes y los filtros seleccionados en LS
   //UseEffect: lo que hace es que cada vez que se cambie la variable de estado que le hemos dado, que se actualice y la vuelva a pintar
   //La función set que es una propiedad del objeto localStorage tiene dos parámetros, uno el key (nombre con el que queremos guardar nuestros datos) y dos el valor (el valor que queremos guardar en LS, la variable de estado)
   //UseEffect es una función que tiene como primer parámetro una función y como segundo parámetro las keys de los valores que queremos que vaya actualizando cada vez que haya un cambio.
-   useEffect(() => {
-    localStorage.set('filterName', filterName);
-    localStorage.set('filterSpecies', filterSpecies); 
-    localStorage.set('filterStatus', filterStatus); 
-    localStorage.set('characters', characters); 
+  useEffect(() => {
+    localStorage.set("filterName", filterName);
+    localStorage.set("filterSpecies", filterSpecies);
+    localStorage.set("filterStatus", filterStatus);
+    localStorage.set("characters", characters);
   }, [filterName, filterSpecies, filterStatus, characters]);
 
-
-  
   //FILTERS
   //Filter by name
   const handleChangeName = (value) => {
@@ -216,7 +212,8 @@ function App() {
           }
         />
 
-        <Route path="*" element={<NoPageFound />}/>
+        <Route path="*" element={<NoPageFound />} />
+        <Route path="/card/:/*" element={<NoPageFound />} />
       </Routes>
     </>
   );

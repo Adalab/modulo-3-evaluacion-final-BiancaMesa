@@ -80,6 +80,10 @@
                 font-weight: bold;
                 //outline-color: rgb(171, 213, 208); 
 
+                @media screen and (max-width: 480px) {
+                    outline-color: rgb(171, 213, 208); 
+                }
+
                 &::placeholder {
                     color: white; 
                     //font-size: 15px;
@@ -133,6 +137,10 @@
 
             &:focus {
                 outline-color: rgb(119, 197, 119); 
+
+                @media screen and (max-width: 480px) {
+                    outline-color: rgb(171, 213, 208); 
+                }
             }
         }
     }
@@ -256,9 +264,10 @@
   font-weight: bold;
 
   @media screen and (max-width: 480px) {
-   text-align: center;
-   width: 200px; 
-}
+    text-align: center;
+    width: 200px; 
+    margin: 15px 0px 60px 0px; 
+    }
 
   &:hover {
   transform: scale(1.05);

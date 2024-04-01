@@ -19,10 +19,11 @@ function App() {
   const localStorageName = localStorage.get('filterName', '');
   const localStorageSpecies = localStorage.get('filterSpecies', ''); 
   const localStorageStatus = localStorage.get('filterStatus', '');
+  const localStorageCharacters = localStorage.get('characters', [])
 
 
   //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
-  const [characters, setCharacters] = useState([]); //variable de estado que recoge la información de la API
+  const [characters, setCharacters] = useState(localStorageCharacters); //variable de estado que recoge la información de la API
   const [filterName, setFilterName] = useState(localStorageName);
   const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); //variable que recoge el valor de la especie seleccionada
   const [filterStatus, setFilterStatus] = useState(localStorageStatus);
@@ -91,7 +92,8 @@ function App() {
     localStorage.set('filterName', filterName);
     localStorage.set('filterSpecies', filterSpecies); 
     localStorage.set('filterStatus', filterStatus); 
-  }, [filterName, filterSpecies, filterStatus]);
+    localStorage.set('characters', characters); 
+  }, [filterName, filterSpecies, filterStatus, characters]);
 
 
   

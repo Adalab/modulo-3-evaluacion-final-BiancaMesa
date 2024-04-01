@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, matchPath } from "react-router-dom";
-import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero 
+import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
 import localStorage from "../services/localStorage";
 import Header from "./Header";
 import CharactersList from "./CharactersList";
@@ -23,9 +23,8 @@ function App() {
   //Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
   const [characters, setCharacters] = useState(localStorageCharacters);
   const [filterName, setFilterName] = useState(localStorageName);
-  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); 
+  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies);
   const [filterStatus, setFilterStatus] = useState(localStorageStatus);
-
 
   //API
   useEffect(() => {
@@ -47,11 +46,10 @@ function App() {
           return 0;
         }
       });
-      
-      setCharacters(sortedCharacters);
 
+      setCharacters(sortedCharacters);
     });
-  }, []); 
+  }, []);
 
   //LOCAL STORAGE: guardamos los datos
   useEffect(() => {

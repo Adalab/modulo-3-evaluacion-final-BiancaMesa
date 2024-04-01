@@ -8,15 +8,6 @@ function Header() {
     <header className="header">
       <img className="header__portal" src={portal} alt="portal" />
 
-      {/* <div className="header__upperPart">
-        <img className="header__upperPart--portal" src={portal} alt="portal" />
-        <img
-          className="header__upperPart--imageLogo"
-          src={headerPic}
-          alt="rick-and-morty-header"
-        />
-      </div> */}
-
       <div className="header__imageAndLogo">
         <img
           className="header__imageAndLogo--logo"

@@ -15,78 +15,52 @@ import NoPageFound from "./NoPageFound";
 function App() {
   //VARIABLES DE ESTADO
   //LOCAL STORAGE: obtener datos guardados
-  //1. Creamos una variable para cada dato que queramos recoger de LS
-  //y llamamos a la función get (el objeto localStorage tiene como propiedad la función get). La función get recibe dos parámetros: uno es el key, el nombre que queremos darle al valor que queremos guardar y dos es el valor inicial que queremos darle a ese dato que estamos guardando
   const localStorageName = localStorage.get("filterName", "");
   const localStorageSpecies = localStorage.get("filterSpecies", "");
   const localStorageStatus = localStorage.get("filterStatus", "");
   const localStorageCharacters = localStorage.get("characters", []);
 
-  //2. Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
-  const [characters, setCharacters] = useState(localStorageCharacters); //variable de estado que recoge la información de la API
+  //Inicialimos nuestras variables de estado con las variables que han recogido la información de LS
+  const [characters, setCharacters] = useState(localStorageCharacters);
   const [filterName, setFilterName] = useState(localStorageName);
-  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); //variable que recoge el valor de la especie seleccionada
+  const [filterSpecies, setFilterSpecies] = useState(localStorageSpecies); 
   const [filterStatus, setFilterStatus] = useState(localStorageStatus);
+  //IS LOADING
   const [isLoading, setIsLoading] = useState(false); //DELETE ???
   //const [characterSpecies, setCharacterSpecies] = useState("");
   //const [hasCLickedDelete, setHasClickedDelete] = useState(false);
   //const [isVisible, setIsVisible] = useState(false);
 
-  //INFORMACION DE LA API
-  //usamos useEffect para llamar a la función que tiene la información de la API para que no se cree un bucle infinito
+  //API
   useEffect(() => {
-    // const localStorageCharacters = localStorage.getItem('characters')
-    // if (localStorageCharacters) {
-    //   setCharacters(JSON.parse(localStorageCharacters));
-    // } else {
     setIsLoading(true);
-    //la función callToApi devuelve una promesa
-    //then recibe como parámetro el array de objetos que hemos creado nuevo con la información de la API
     callToApi().then((charactersData) => {
       //Creamos un array que contenga lo mismo que charactersData pero ordenado alfabéticamente por nombre.
-      //1. Hacemos una copia del array de objetos charactersData usando destructuring
-      //2. Lo ordenamos usando el método sort, donde a y b van a ser dos elementos del array que el método va a ir comparando. Este método recibe como parámetro una función de comparación que va a determinar el orden de los elementos
+      
       const sortedCharacters = [...charactersData].sort((a, b) => {
-        //Manera simplificada: Comparamos alfabéticamente el nombre del elemento a con el nombre del elemento b
-        //return a.name.localeCompare(b.name);
-
-        //Manera no simplificada: Creamos una constante para los dos nombres que vamos a comparar.
-        //a y b son dos elementos del array (dos objetos), accedemos a su propiedad nombre y lo ponemos en minúscula para evitar problemas
         const nameA = a.name.toLowerCase();
         const nameB = b.name.toLowerCase();
 
-        //El método sort realmente lo que ordena son números así que tenemos que asignarle números a cada comparación que realicemos para que sort pueda ordenarlos.
-        //Si el nombre A es mayor que el nombre B alfabéticamente, devuelve 1
         if (nameA > nameB) {
           return 1;
         }
 
-        //Si el nombre A es inferior al nombre B alfabéticamente, devuelve -1
         if (nameA < nameB) {
           return -1;
         }
 
-        //Si el nombre A es igual al nombre B alfabéticamente, devuelve 0
         if (nameA === nameB) {
           return 0;
         }
       });
       setIsLoading(false); //poner justo despues de que el fetch responda
-      //guardamos este array de objetos que ha recogido la petición de la API en una variable de estado para poder usar esos datos ahora en App
+      
       setCharacters(sortedCharacters);
 
-      //metemos en LS la lista de characters ordenada
-      // localStorage.setItem('characters', JSON.stringify(sortedCharacters));
-      //console.log(charactersData);
     });
-    // }
-  }, []); //se ejecuta una sóla vez lo que hay en la función, cuando se carga la página
+  }, []); 
 
   //LOCAL STORAGE: guardar datos
-  //Almacenamos las variables de estado con la informacion de los personajes y los filtros seleccionados en LS
-  //UseEffect: lo que hace es que cada vez que se cambie la variable de estado que le hemos dado, que se actualice y la vuelva a pintar
-  //La función set que es una propiedad del objeto localStorage tiene dos parámetros, uno el key (nombre con el que queremos guardar nuestros datos) y dos el valor (el valor que queremos guardar en LS, la variable de estado)
-  //UseEffect es una función que tiene como primer parámetro una función y como segundo parámetro las keys de los valores que queremos que vaya actualizando cada vez que haya un cambio.
   useEffect(() => {
     localStorage.set("filterName", filterName);
     localStorage.set("filterSpecies", filterSpecies);
@@ -121,11 +95,6 @@ function App() {
       return filterSpecies !== "" ? character.species === filterSpecies : true;
     })
     .filter((character) => {
-      //devuelve los characters que cumplan con la siguiente condición:
-      //Si la variable que guarda el valor del estado seleccionado (filterStatus) está vacía, que no nos filtre nada (porque aún no se ha seleccionado nada), de esta manera al cargar la página por primera vez nos saldrán todos los personajes
-      //Si la variable de estado filterStatus no está vacía, entonces filter nos va a devolver los personajes cuyo status concuerde con el marcado, de lo contrario
-      //TRUE: se utiliza para decirle al método filter que todos los characters pasan el filtro cuando no hay ningún filtro establecido. El método filter funciona de la siguiente manera: si el elemento que pasamos por párametro (en este caso character) cumple con la condición, pasa el filtro y si el parámetro no lo cumple, no pasa el filtro.
-      //Al poner true, le estamos diciendo al método filter que si la condición que hemos puesto no se cumple, que todos los elementos que estamos pasado como parámetros pasen el filtro.
       return filterStatus !== "" ? character.status === filterStatus : true;
     });
 
@@ -156,8 +125,6 @@ function App() {
     setFilterName("");
     setFilterSpecies("");
     setFilterStatus("");
-    //setCharacters = ([]);
-    //setHasClickedDelete(true);
   };
 
   return (
@@ -195,9 +162,7 @@ function App() {
           path="/card/:cardId"
           element={
             <>
-              {/* <Route  path="/"> */}
               <HeaderCharacterDetails />
-              {/* </Route> */}
 
               <main className="mainCharacterDetails">
                 <CharacterDetails

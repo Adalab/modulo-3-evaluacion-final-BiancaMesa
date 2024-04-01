@@ -16,7 +16,6 @@ function CharacterCard({ characterData }) {
             alt={characterData.name}
           />
           <div className="backgroundImage"></div>
-          {/* <img className="backgroundImage" src="/src/images/rick_and_morty_portal.png" alt="background-img" /> */}
         </div>
 
         <div className="characterCard__link--info">
@@ -29,8 +28,6 @@ function CharacterCard({ characterData }) {
 
           <div className="more_info">
             <button className="more_info__btn">More info</button>
-            {/* <button className="more_info__btn"><img className="more_info__img" src="./src/images/rick_and_morty_portal.png" alt="" />More info</button> */}
-            {/* <img className="more_info__img" src="./src/images/rick_and_morty_portal.png" alt="" /> */}
           </div>
         </div>
       </Link>

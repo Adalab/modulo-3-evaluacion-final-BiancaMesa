@@ -1,43 +1,11 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-// import localStorage from "../services/localStorage";
-// import {useEffect} from "react";
-// import {useParams} from "react-router-dom";
 import "../scss/components/CharacterDetails.scss";
 
 function CharacterDetails({ character, cardId }) {
   const previousCardId = cardId - 1;
   const nextCardId = cardId + 1;
 
-  ///////// LOCAL STORAGE ??? ///////
-  // const { id } = useParams();
-
-  // const savedCharacter = localStorage.get('character');
-  // const characterData =
-  //   savedCharacter && parseInt(savedCharacter.id) === parseInt(id)
-  //     ? savedCharacter
-  //     : characters.find((character) => character.id === parseInt(id));
-
-  //     useEffect(() => {
-  //       if (characterData && savedCharacter.id !== characterData.id) {
-  //         localStorage.set('character', characterData);
-  //       }
-  //     }, [savedCharacter, characterData]);
-
-  //     if (!characterData) {
-  //       return (
-  //         <div className="notFound">
-  //           <Link to="/">
-  //             <button className="detail__button">
-  //               <i className="fa-solid fa-chevron-left"></i> Back
-  //             </button>
-  //           </Link>
-  //           <p className="notFound__messagge">Sorry, character not found</p>
-  //         </div>
-  //       );
-  //     }
-
-  //////////
 
   return (
     <>

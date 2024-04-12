@@ -36,19 +36,7 @@ https://github.com/Adalab/modulo-3-evaluacion-final-BiancaMesa.git
 3. **Install local dependencies:**  
  ```npm install```
 
-4. **Start the development server:**   
- ```npm start```
-
-5. **Install sass:**  
-```npm install sass```
-
-6. **Install propTypes:**  
-```npm install prop-types```
-
-7. **Install React Router Dom:**   
-```npm install react-router-dom```
-
-8. **Start the project:**  
+4. **Start the project:**  
 ```npm run dev``` 
 
 

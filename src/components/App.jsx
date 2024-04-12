@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Route, Routes, useLocation, matchPath } from "react-router-dom";
+import {Navigate} from "react-router-dom"; 
 import callToApi from "../services/api"; //nos importamos la función que contiene la petición al servidor y el nuevo array de objetos de su fichero
 import localStorage from "../services/localStorage";
 import Header from "./Header";
@@ -162,7 +163,8 @@ function App() {
           }
         />
 
-        <Route path="*" element={<NoPageFound />} />
+        <Route path="/404" element={<NoPageFound />} />
+        <Route path="*" element={<Navigate to = "/404" />} />
       </Routes>
     </>
   );
